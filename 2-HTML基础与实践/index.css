@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+header {
+    height: 30px;
+    width: 100%;
+    background-color: #a7a262;
+}
+.paddingCenter{
+    box-sizing: border-box;
+    padding: 0 100px 0 100px;
+}
+.introduce{
+    padding: 5px 0;
+    width: 200px;
+    height: inherit;
+    display: flex;
+}
+header .avatar{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    margin: 0 0 0 20px;
+}
+header .name{
+    margin: 0 0 0 5px;
+}
+.title{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+.title:hover{
+    font-size: 20px;
+    color: rebeccapurple;
+    font-weight: 600;
+}
+.title::after{
+    content: '';
+    width: 50px;
+    height: 3px;
+    display: block;
+    background-color: rgb(145, 145, 101);
+    margin-left: 50%;
+    transform: translate(-50%);
+}
+.favorite {
+    margin-bottom: 30px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.favorite-item{
+    position: relative;
+    width: 300px;
+    height: 460px;
+    background-color: rgb(24, 7, 7); 
+    text-align: center;
+}
+.favorite-item img{
+    width: 95%;
+}
+.favorite-item .intro{
+    height: 30px;
+    width: 100%;
+    line-height: 30px;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+}
+footer {
+    margin-top: 30px;
+    /* height: 200px; */
+    background-color: rgb(139, 22, 22);
+}
+.motto{
+    height: 200px;
+    line-height: 200px;
+    float: left;
+    width: 80%;
+}
+.qrCode img{
+    margin-top: 10px;
+    width: 180px;
+    display: inline-block;
+}
+    
+.aboutMe{
+    width: 100%;
+    text-align: center;
+    }
+
+
