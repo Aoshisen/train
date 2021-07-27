@@ -1,0 +1,30 @@
+.container{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    border: 2px solid #000;
+    overflow: hidden;
+}
+.barrage{
+    position: relative;
+}
+.input {
+    margin-top: 30px;
+    width: 300px;
+    position: absolute;
+    transform: translate(-150px);
+    left: 50%;
+}
+.lanuch{
+    margin-top: 60px;
+    width: 80px;
+    position: absolute;
+    transform: translate(-80px);
+    left: 50%;
+}
+.clear {
+    margin-top: 60px;
+    width: 80px;
+    position: absolute;
+    left: 50%;
+}
