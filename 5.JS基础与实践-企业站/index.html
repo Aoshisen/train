@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+ <div class="index">
+     <header class="header">
+         <div class="intro">
+             <div class="logo"><img src="./assets/logo.jpg" alt=""></div>
+             <div class="name">星美国际影城</div>
+         </div>
+         <div class="menu">
+             <a href="">首页</a>
+             <a href="">新闻</a>
+             <a href="">关于我们</a>
+         </div>
+     </header>
+     <div class="banner">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="./assets/bannner1.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="./assets/banner2.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="./assets/bannner3.jpg" alt="">
+            </div>
+        </div>
+     </div>
+     <div class="content">
+         <div class="recent-movie">
+             <div class="title">
+                 最新上映
+             </div>
+         </div>
+         <div class="news">
+             <div class="news-item">
+                 <div class="item-intro">
+                     <div class="movie-name">复仇者联盟</div>
+                <p>
+                    来自泰坦星的灭霸为了解决宇宙资源匮乏、人口暴增的问题，集齐了所有无限宝石，一个响指成功地使全宇宙生命随机减半。
+宇宙由于灭霸的行动而变得满目疮痍，但是五年之后，被困在量子领域的蚁人意外回到现实世界，
+他的出现为幸存的复仇者点燃了希望。无论前方将遭遇怎样的后果，幸存的复仇者都必须在剩余盟友的帮助下再一次集结，以逆转灭霸的所作所为，彻底恢复宇宙的秩序
+                </p></div>
+                 <div class="item-img">
+                     <img src="./" alt="">
+                 </div>
+             </div>
+             <div class="news-item">
+                <div class="item-img">
+                    <img src="./" alt="">
+                </div>
+                <div class="item-intro">
+                    <div class="movie-name">复仇者联盟</div>
+               <p>
+                   来自泰坦星的灭霸为了解决宇宙资源匮乏、人口暴增的问题，集齐了所有无限宝石，一个响指成功地使全宇宙生命随机减半。
+宇宙由于灭霸的行动而变得满目疮痍，但是五年之后，被困在量子领域的蚁人意外回到现实世界，
+他的出现为幸存的复仇者点燃了希望。无论前方将遭遇怎样的后果，幸存的复仇者都必须在剩余盟友的帮助下再一次集结，以逆转灭霸的所作所为，彻底恢复宇宙的秩序
+               </p></div>   
+            
+            </div>
+            <div class="news-item">
+                <div class="item-intro">
+                    <div class="movie-name">复仇者联盟</div>
+               <p>
+                   来自泰坦星的灭霸为了解决宇宙资源匮乏、人口暴增的问题，集齐了所有无限宝石，一个响指成功地使全宇宙生命随机减半。
+宇宙由于灭霸的行动而变得满目疮痍，但是五年之后，被困在量子领域的蚁人意外回到现实世界，
+他的出现为幸存的复仇者点燃了希望。无论前方将遭遇怎样的后果，幸存的复仇者都必须在剩余盟友的帮助下再一次集结，以逆转灭霸的所作所为，彻底恢复宇宙的秩序
+               </p></div>
+                <div class="item-img">
+                    <img src="./" alt="">
+                </div>
+            </div>
+         </div>
+     </div>
+     <footer>
+         <div class="information">
+             <div class=info-item>
+                 <img src="./assets/location.png" alt="" srcset="">
+                 <div class="description">
+                     成都市
+                 </div>
+             </div>
+             <div class=info-item>
+                <img src="./assets/emial.png" alt="" srcset="">
+                <div class="description">
+                    成都市
+                </div>
+            </div>
+            <div class=info-item>
+                <img src="./assets/telephone.png" alt="" srcset="">
+                <div class="description">
+                    成都市
+                </div>
+            </div>
+            <div class=info-item>
+                <img src="./assets/mmqrcode1627285639457.png" alt="" srcset="">
+                <div class="description">
+                    成都市
+                </div>
+            </div>
+         </div>
+
+         <div class="copyright">
+             版权所有@星美国际影城
+         </div>
+     </footer>
+ </div>
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+var mySwiper = new Swiper ('.banner')  
+    const baseUrl='http://mock-api.com/vKVrqEK8.mock/'
+    let getIndexData=function(){
+        axios.get(`${baseUrl}getIndexData`).then(
+            (res)=>{
+                console.log(res.data);
+            }
+        ).catch((error)=>{
+            console.log(error);
+        })
+    }
+    getIndexData();
+</script>
+</html>
