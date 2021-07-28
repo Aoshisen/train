@@ -5,11 +5,12 @@ body{
 .index{
     min-width: 1000px;
 }
-header {
+/* header {
     padding:0 150px 0 150px;
-    background-color: rgb(212, 181, 181);
+    background-color:#C0C1C5;
     display: flex;
     justify-content: space-between;
+    font-weight: 600;
     align-items: center;
     margin: auto;
     height: 40px;
@@ -28,6 +29,11 @@ header .logo img {
     height: 20px;
 }
 
+.menu a{
+    margin-left: 12px;
+    color: black;
+    text-decoration: none;
+} */
 .banner{
     width: 100%;
     height: 800px;
@@ -38,9 +44,8 @@ header .logo img {
     width: 100%;
 }
 .banner .swiper-slide img {
-    width: 1750px;
+    width: 1920px;
 }
-
 .content{
     padding:0 150px 0 150px;
 
@@ -54,14 +59,14 @@ header .logo img {
 }
 
 
-.news-item{
+.movie-item{
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 15px;
 }
 
-.news-item .item-intro{
+.movie-item .item-intro{
     width: 300px;
     height: 300px;
 }
@@ -69,13 +74,51 @@ header .logo img {
     text-align: center;
 }
 
-.news-item .item-img{
+.movie-item .item-img{
     width: 300px;
     height: 300px;
     background-color: #000;
 }
-footer {
+.movie-item .item-img img{
+    width: 300px;
     height: 300px;
+}
+
+.news {
+    display: flex;
+    justify-content: space-between;
+}
+.news .title {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.news .news-item{
+    width: 200px;
+    height: 250px;
+    /* border: 1px solid #000; */
+}
+.news-item .item-img{
+    background-color: rgb(95, 78, 78);
+    width: 100%;
+    height: 100px;
+}
+.news-item .item-img img{
+    width: 200px;
+    height: 100px;
+}
+.news-item .intro {
+    margin-top: 4px;
+}
+.news-item .main {
+    font-size: 12px;
+    color: rgb(105, 105, 99);
+}
+
+/* footer {
+    height: 400px;
     background-color: #D7D7D7;
 }
 .information {
@@ -86,11 +129,25 @@ footer {
 .info-item{
     text-align: center;
     position: relative;
-    width: 200px;
+    width: 400px;
     height: 200px;
 }
 .info-item img{
     width: 120px;
+}
+.qrCode {
+    position: relative;
+    top: -30px;
+}
+.qrCode img {
+    width: 200px;
+}
+.qrCode .description {
+    position: absolute;  
+    top: 210px;
+    left: 50%;
+    color: rgb(141, 125, 125);
+    transform: translate(-50%);
 }
 .description {
     position: absolute;  
@@ -100,6 +157,7 @@ footer {
     transform: translate(-50%);
 }
 .copyright{
+    margin-top: 100px;
     width: 100%;
     text-align: center;
     font-size: 15px;
@@ -112,6 +170,6 @@ footer {
     background-color: rgb(197, 169, 169);
     position: relative;
     left: 50%;
-    top: -5px;
+    top: -20px;
     transform: translate(-65px);
-}
+} */
