@@ -57,30 +57,30 @@ header .logo img {
     font-size: 20px;
     font-weight: 500;
 }
-
-
 .movie-item{
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     margin-bottom: 15px;
 }
 
 .movie-item .item-intro{
     width: 300px;
+    padding: 0 100px;
     height: 300px;
+    overflow:hidden;
 }
 .item-intro .movie-name{
     text-align: center;
 }
 
 .movie-item .item-img{
-    width: 300px;
+    width: 533px;
     height: 300px;
-    background-color: #000;
+    /* background-color: #000; */
 }
 .movie-item .item-img img{
-    width: 300px;
+    width: 533px;
     height: 300px;
 }
 
@@ -88,26 +88,26 @@ header .logo img {
     display: flex;
     justify-content: space-between;
 }
-.news .title {
+.news-title {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 100px;
     margin-bottom: 20px;
     font-size: 20px;
     font-weight: 500;
 }
 .news .news-item{
-    width: 200px;
-    height: 250px;
+    width: 300px;
+    height: 350px;
     /* border: 1px solid #000; */
 }
 .news-item .item-img{
     background-color: rgb(95, 78, 78);
     width: 100%;
-    height: 100px;
+    height: 200px;
 }
 .news-item .item-img img{
-    width: 200px;
-    height: 100px;
+    width: 300px;
+    height: 200px;
 }
 .news-item .intro {
     margin-top: 4px;

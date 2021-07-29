@@ -29,7 +29,7 @@ body {
     height: 100%;
     width: 45%;
     float: left;
-    background-color: #000;
+    /* background-color: #000; */
     overflow: hidden;
 }
 .item-left img{
@@ -63,5 +63,9 @@ body {
     position: relative;
     top: 2px;
     border: 1px solid #000;
+    cursor: pointer;
     padding: 0 10px;
+}
+.pagination .active{
+    background-color: blue;
 }

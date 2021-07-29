@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="../header.css">
     <link rel="stylesheet" href="./news-detail.css">
 </head>
+
 <body>
     <div class="news-detail">
         <header class="header">
@@ -25,18 +27,26 @@
         <div class="content">
             <div class="title">
                 <span></span>
-                <div class="title-text">《蚁人》再发新剧照 漫威第二阶段收官之作 7月17日北美上映</div>
-                <div class="create-at">2015-05-26 09:27:23</div>
+                <div class="title-text">
+                    <!-- 《蚁人》再发新剧照 漫威第二阶段收官之作 7月17日北美上映 -->
+                </div>
+                <div class="create-at">
+                    <!-- 2015-05-26 09:27:23 -->
+                </div>
             </div>
             <div class="picture">
-                <img src="../assets/黑寡妇.jpg" alt="">
+                <!-- <img src="../assets/黑寡妇.jpg" alt=""> -->
+                <img src="" alt="">
             </div>
             <div class="intro">
                 <p>
-                    《黑寡妇》原定的上映档期是今年5月1日，此前环球公司和米高梅公司的《007：无暇赴死》、环球公司的《速度与激情9》、迪士尼的《花木兰》，以及派拉蒙影业的《寂静之地2》等，都已经宣布推迟上映。 尽管距离上映还有一个半月，但是在北京时间3月18日，迪士尼最终还是宣布推迟上映斯嘉丽·约翰逊主演的超级英雄电影《黑寡妇》，漫威影业这部电影新的上映日期还有待公布。
+                    <!-- 《黑寡妇》原定的上映档期是今年5月1日，此前环球公司和米高梅公司的《007：无暇赴死》、环球公司的《速度与激情9》、迪士尼的《花木兰》，以及派拉蒙影业的《寂静之地2》等，都已经宣布推迟上映。
+                    尽管距离上映还有一个半月，但是在北京时间3月18日，迪士尼最终还是宣布推迟上映斯嘉丽·约翰逊主演的超级英雄电影《黑寡妇》，漫威影业这部电影新的上映日期还有待公布。 -->
                 </p>
                 <p>
-                    &nbsp&nbsp黑寡妇（Black Widow）原名娜塔莉亚·爱丽安诺芙娜·罗曼诺娃（Natalia Alianovna Romanova）。二战时期，斯大林格勒是前线战场，那里焦土一片，到处都是起火的残缺楼房，一名叫伊凡·彼得洛维奇（Ivan Petrocich）的苏联士兵在探营时发现有栋房子里传出求救声，在搜救中发现了娜塔莎，之后的日子里伊凡作为娜塔莎的朋友、亲人，甚至父亲，给了她最大的帮助。
+                    <!-- &nbsp&nbsp黑寡妇（Black Widow）原名娜塔莉亚·爱丽安诺芙娜·罗曼诺娃（Natalia Alianovna
+                    Romanova）。二战时期，斯大林格勒是前线战场，那里焦土一片，到处都是起火的残缺楼房，一名叫伊凡·彼得洛维奇（Ivan
+                    Petrocich）的苏联士兵在探营时发现有栋房子里传出求救声，在搜救中发现了娜塔莎，之后的日子里伊凡作为娜塔莎的朋友、亲人，甚至父亲，给了她最大的帮助。 -->
                 </p>
             </div>
         </div>
@@ -49,29 +59,57 @@
                     </div>
                 </div>
                 <div class="info-item">
-                   <img src="../assets/emial.png" alt="" srcset="">
-                   <div class="description">
-                       email@admain.com.cn
-                   </div>
-               </div>
-               <div class="info-item">
-                   <img src="../assets/telephone.png" alt="" srcset="">
-                   <div class="description">
-                       123-482-2684
-                   </div>
-               </div>
-               <div class="info-item qrCode">
-                   <img src="../assets/mmqrcode1627285639457.png" alt="" srcset="">
-                   <div class="description">
-                       扫一扫添加微信
-                   </div>
-               </div>
+                    <img src="../assets/emial.png" alt="" srcset="">
+                    <div class="description">
+                        email@admain.com.cn
+                    </div>
+                </div>
+                <div class="info-item">
+                    <img src="../assets/telephone.png" alt="" srcset="">
+                    <div class="description">
+                        123-482-2684
+                    </div>
+                </div>
+                <div class="info-item qrCode">
+                    <img src="../assets/mmqrcode1627285639457.png" alt="" srcset="">
+                    <div class="description">
+                        扫一扫添加微信
+                    </div>
+                </div>
             </div>
-   
+
             <div class="copyright">
                 版权所有@星美国际影城
             </div>
         </footer>
     </div>
 </body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    let { search } = location
+    // console.log(search.slice(1));
+    var a = new URLSearchParams(search);
+    let page = a.get("page")
+    let index = a.get('id')
+    let title = document.querySelector(".title .title-text");
+    let createAt = document.querySelector(".title .create-at")
+    let img = document.querySelector('.picture img')
+    let p=document.querySelectorAll('.intro p')
+    // console.log(title,createAt,img);
+    axios({
+        method: "post",
+        url: `https://api.apiopen.top/getWangYiNews?page=${page}&count=8`,
+    }).then((res) => {
+        let Data = res.data.result[index];
+        console.log(Data);
+        img.src = Data.image
+        title.innerHTML = Data.title
+        createAt.innerHTML = Data.passtime
+        p[0].innerHTML = Data.title.repeat(6)
+        p[1].innerHTML = Data.title.repeat(6)
+
+        // console.log(Data);
+    })
+</script>
+
 </html>
