@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../footer.css">
+    <link rel="stylesheet" href="../header.css">
+    <link rel="stylesheet" href="./about-me.css">
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=fKX6tIRNImewD7wwCmWfGOnWNvYo9Qvy"></script>
+</head>
+<body>
+    <div class="about-me">
+        <header class="header">
+            <div class="intro">
+                <div class="logo"><img src="../assets/logo.jpg" alt=""></div>
+                <div class="name">星美国际影城</div>
+            </div>
+            <div class="menu">
+                <a href="../index.html">首页</a>
+                <a href="../news/news.html">新闻</a>
+                <a href="../aboutMe/about-me.html">关于我们</a>
+            </div>
+        </header>
+        <div class="content">
+            <div class="title">
+                关于我们
+            </div>
+            <div class="main">
+                <div id="map">
+
+                </div>
+                <div class="main-right">
+                    <p class="intro">
+                        电影院（cinema）是为观众放映电影的场所。电影在产生初期，是在咖啡厅、茶馆等场所放映的。随着电影的进步与发展，出现了专门为放映电影而建造的电影院。
+                        电影的发展——从无声到有声乃至立体声，从黑白片到彩色片，从普通银幕到宽银幕乃至穹幕、环幕，使电影院的形体、尺寸、比例和声学技术都发生了很大变化。
+                        电影院必须满足电影放映的工艺要求，得到应有的良好视觉和听觉效果，电影已经成为人们饭后的论点。
+                    </p>
+                    <div class="info">
+                        locate:  四川省成都市天府大道中段
+                    </div>
+                    <div class="info">
+                        email:  admain@textexample.com.cn
+                    </div>
+                    <div class="info">
+                        telephone:  453-126-3349
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="information">
+                <div class="info-item">
+                    <img src="../assets/location.png" alt="" srcset="">
+                    <div class="description">
+                        成都市武侯区
+                    </div>
+                </div>
+                <div class="info-item">
+                   <img src="../assets/emial.png" alt="" srcset="">
+                   <div class="description">
+                       email@admain.com.cn
+                   </div>
+               </div>
+               <div class="info-item">
+                   <img src="../assets/telephone.png" alt="" srcset="">
+                   <div class="description">
+                       123-482-2684
+                   </div>
+               </div>
+               <div class="info-item qrCode">
+                   <img src="../assets/mmqrcode1627285639457.png" alt="" srcset="">
+                   <div class="description">
+                       扫一扫添加微信
+                   </div>
+               </div>
+            </div>
+   
+            <div class="copyright">
+                版权所有@星美国际影城
+            </div>
+        </footer>
+    </div>
+</body>
+<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+      createMap();//创建地图
+      setMapEvent();//设置地图事件
+      addMapControl();//向地图添加控件
+      addMapOverlay();//向地图添加覆盖物
+    }
+    function createMap(){ 
+      map = new BMap.Map("map"); 
+      map.centerAndZoom(new BMap.Point(104.077912,30.554317),18);
+    }
+    function setMapEvent(){
+      map.enableScrollWheelZoom();
+      map.enableKeyboard();
+      map.enableDragging();
+      map.enableDoubleClickZoom()
+    }
+    function addClickHandler(target,window){
+      target.addEventListener("click",function(){
+        target.openInfoWindow(window);
+      });
+    }
+    function addMapOverlay(){
+    }
+    //向地图添加控件
+    function addMapControl(){
+      var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+      scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+      map.addControl(scaleControl);
+      var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+      map.addControl(navControl);
+      var overviewControl = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:true});
+      map.addControl(overviewControl);
+    }
+    var map;
+      initMap();
+  </script>
+</html>
