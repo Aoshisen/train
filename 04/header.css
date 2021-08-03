@@ -1,29 +1,33 @@
 header {
-    padding:0 150px 0 150px;
-    background-color:#C0C1C5;
-    display: flex;
-    justify-content: space-between;
-    font-weight: 600;
-    align-items: center;
-    margin: auto;
+    height: 40px;
+    background-color: ivory;
+}
+header .btn-default{
+    border-color: transparent;
+}
+.yellow{
+    background-color: yellow;
     height: 40px;
 }
-header .logo {
-    display: inline-block;
-    position: relative;
-    top: 2px;
+.blue{
+    background-color: blue;
+    height: 40px;
 }
-header .name{
-    display: inline-block;
-}
-header .logo img {
-    border-radius: 50%;
+.logo{
     width: 20px;
-    height: 20px;
+    position: relative;
+    top: 10px;
+    border-radius: 50%;
 }
-
-.menu a{
-    margin-left: 12px;
-    color: black;
-    text-decoration: none;
+.name{
+    font-size: normal;
+    position: relative;
+    top: 10px;
+    display: inline-block;
+    font-weight: 500;
+}
+.banner {
+    margin-top:10px;
+    width: 100%;
+    overflow: hidden;
 }
