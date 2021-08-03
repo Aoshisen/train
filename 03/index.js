@@ -24,7 +24,7 @@ span.style.width="100px"
 span.style.color=getRandomColor();
 span.style.fontSize=Math.random()*12+12+'px'
 span.style.top=Math.random()*400+'px'
-span.style.right="20px"
+span.style.right="0px"
 let start=Date.now()
 let timer=setInterval(()=>{
   let passTime=Date.now()-start;

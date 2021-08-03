@@ -21,8 +21,6 @@ body{
 }
 
 .movie-item{
-    width: 100%;
-    display: flex;
     justify-content: space-around;
     margin: 15px 0;
 }
@@ -30,7 +28,19 @@ body{
 .movie-item .item-intro{
     height: 300px;
     overflow:hidden;
-    width: 100%;
+    width: 50%;
+}
+.float-left{
+    float: left;
+}
+.float-right{
+    float: right;
+}
+
+
+.movie-item .item-img{
+    width: 50%;
+    line-height: 300px;
 }
 .movie-item .item-intro p {
     margin: 10px 0;

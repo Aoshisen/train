@@ -11,7 +11,6 @@
 
     <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="./index.css">
@@ -22,112 +21,108 @@
         <header>
             <div class="container">
                 <div class="row">
-                    <div class=" col-md-9 col-xs-11">
+                    <div class=" col-md-9 col-xs-10">
                         <img src="./assets/66982800.jpg" alt="" class="avatar">
                         <div class="name">敖仕森</div>
                     </div>
                     <div class="spans col-md-3 hidden-sm hidden-xs">
-                        <a href="#movie">喜歡的電影</a>
-                        <a href="#hobby">個人的愛好</a>
-                        <a href="#footer">底部導航</a>
+                        <a href="#movie">喜欢的电影</a>
+                        <a href="#hobby">个人爱好</a>
+                        <a href="#footer">聊一聊</a>
                     </div>
-                    <button type="button" class="btn btn-default btn-sm hidden-md hidden-lg col-xs-1 transparent">
+                    <!-- <button type="button" class="btn btn-default btn-sm hidden-md hidden-lg col-xs-1 transparent">
                         <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
-                    </button>
-                </div>
-                <div class="row row-hidden">
-                    <div class="notSee">
-                        <div class="div">
-                            <a href="#movie">喜歡的電影</a>
-        
-                        </div>
-                        <div class="div">
-                            <a href="#hobby">個人的愛好</a>
-        
-                        </div>
-                        <div class="div">
-                            <a href="#footer">底部導航</a>
-                        </div>
+                    </button> -->
+                    <!-- Single button -->
+                    <div class="btn-group  col-xs-2 ">
+                        <button type="button" class="btn btn-default dropdown-toggle btn-sm hidden-md hidden-lg transparent" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">喜欢的电影</a></li>
+                          <li><a href="#">个人爱好</a></li>
+                          <li><a href="#">聊一聊</a></li>
+                        </ul>
+                      </div>
                 </div>
             </div>
-            
-            </div>
-        </header>
-        <div class="title" name="movie">
-            喜欢的电影
-        </div>
-        <div class="container">
-            <div class="col-xs-6 col-lg-3   ">
-                <div class="card">
-                    <img src="./assets/复仇者联盟.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">复仇者联盟</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-6 col-lg-3   ">
-                <div class="card">
-                    <img src="./assets/小丑.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">小丑</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-6 col-lg-3   ">
-                <div class="card">
-                    <img src="./assets/至暗时刻.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">至暗时刻</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-6 col-lg-3   ">
-                <div class="card">
-                    <img src="./assets/钢铁侠.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">钢铁侠</h5>
-                    </div>
+    </div>
+    </header>
+    <div class="title" name="movie">
+        喜欢的电影
+    </div>
+    <div class="container">
+        <div class="col-xs-6 col-lg-3   ">
+            <div class="card">
+                <img src="./assets/复仇者联盟.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">复仇者联盟</h5>
                 </div>
             </div>
         </div>
-        <div class="title" name='hobby'>
-            个人的爱好
+        <div class="col-xs-6 col-lg-3   ">
+            <div class="card">
+                <img src="./assets/小丑.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">小丑</h5>
+                </div>
+            </div>
         </div>
-        <div class="container">
-            <div class="col-xs-6 col-lg-3   ">
-                <div class="card">
-                    <img src="./assets/滑板.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">滑板</h5>
-                    </div>
+        <div class="col-xs-6 col-lg-3   ">
+            <div class="card">
+                <img src="./assets/至暗时刻.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">至暗时刻</h5>
                 </div>
             </div>
-            <div class="col-xs-6 col-lg-3   ">
-                <div class="card">
-                    <img src="./assets/乒乓.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">乒乓</h5>
-                    </div>
+        </div>
+        <div class="col-xs-6 col-lg-3   ">
+            <div class="card">
+                <img src="./assets/钢铁侠.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">钢铁侠</h5>
                 </div>
             </div>
-            <div class="col-xs-6 col-lg-3">
-                <div class="card">
-                    <img src="./assets/Arch.png" class="card-img-top" alt="...">
+        </div>
+    </div>
+    <div class="title" name='hobby'>
+        个人的爱好
+    </div>
+    <div class="container">
+        <div class="col-xs-6 col-lg-3   ">
+            <div class="card">
+                <img src="./assets/滑板.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">滑板</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 col-lg-3   ">
+            <div class="card">
+                <img src="./assets/乒乓.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">乒乓</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 col-lg-3">
+            <div class="card">
+                <img src="./assets/Arch.png" class="card-img-top" alt="...">
 
-                    <div class="card-body">
-                        <h5 class="card-title">Arch</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-6 col-lg-3   ">
-                <div class="card">
-                    <img src="./assets/网易云.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">网易云</h5>
-                    </div>
+                <div class="card-body">
+                    <h5 class="card-title">Arch</h5>
                 </div>
             </div>
         </div>
+        <div class="col-xs-6 col-lg-3   ">
+            <div class="card">
+                <img src="./assets/网易云.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">网易云</h5>
+                </div>
+            </div>
+        </div>
+    </div>
 
     </div>
     <footer name='footer'>
@@ -141,23 +136,23 @@
                 </div>
             </div>
         </div>
-        <hr>
-        <div class="aboutMe">
+        <div class="copy-right">
             版权所有@Aoshisen
         </div>
     </footer>
     </div>
 </body>
 <script>
-    let button=document.getElementsByTagName('button')
+    let button = document.getElementsByTagName('button')
     console.log(button);
-    let rowHidden=document.querySelector('.row-hidden')
+    let rowHidden = document.querySelector('.row-hidden')
     console.log(rowHidden);
-    let isHidden=true
-    button[0].addEventListener('click',()=>{
-        isHidden=!isHidden
-        let div=rowHidden.querySelector('div')
-        div.className=isHidden?"notSee":""
+    let isHidden = true
+    button[0].addEventListener('click', () => {
+        isHidden = !isHidden
+        let div = rowHidden.querySelector('div')
+        div.className = isHidden ? "notSee" : ""
     })
 </script>
+
 </html>

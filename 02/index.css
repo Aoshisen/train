@@ -11,26 +11,35 @@ body {
 header {
     /* height: 30px; */
     width: 100%;
-    background-color: #a7a262;
+    background-color: #C9494F;
 }
 
-
-header .name {
-    display: inline-block;
-}
 .introduce{
     padding: 5px 0;
-
-    /* height: inherit; */
     display: flex;
 }
-header .avatar{
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: 1px solid #000;
-    margin: 0 0 0 20px;
+header .name {
+    display: inline-block;
+    margin-top: 15px;
+    color: azure;
 }
+header .avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+header {
+    height: 50px;
+}
+header .spans{
+    margin-top: 15px;
+}
+header .spans a{
+    color: aliceblue;
+}
+header .btn-group{
+    margin-top: 12px;   
+} 
 
 .transparent {
     background-color: transparent;
@@ -40,6 +49,18 @@ header .avatar{
     height: 40px;
     line-height: 40px;
     text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+}
+.title::after{
+    display: block;
+    content: '';
+    width: 40px;
+    height: 2px;
+    position:relative;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: black;
 }
 .notSee{
     position:absolute ;
@@ -49,8 +70,8 @@ header .avatar{
 
 
 .card{
-    border: 1px solid #000;
-    background-color: rgb(168, 167, 167);
+    border: 1px solid #F2D1C8;
+    background-color: #FEF0EF;
     padding:0 5px;
     margin-top: 10px;
 }
@@ -80,17 +101,22 @@ footer {
 .qrCode img {
     width: 50%;
 }
-.aboutMe{
+.copy-right{
+    margin-top: 50px;
     width: 100%;
     text-align: center;
-    }
-
-.aboutMe{
-    width: 100%;
-    text-align: center;
-    }
-
-
+}
+.copy-right::before{
+    width: 70%;
+    content: '';
+    display: block;
+    height: 1px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: #67000D;
+    margin-bottom: 10px;
+}
     .yellow{
         height: 40px;
         background-color: yellow;
