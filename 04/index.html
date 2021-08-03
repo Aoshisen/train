@@ -25,9 +25,9 @@
                     </div>
                     <div class="col-md-4  hidden-sm hidden-xs">
                         <ul class="nav nav-tabs">
-                            <li role="presentation" class="active"><a href="#">首页</a></li>
-                            <li role="presentation"><a href="#">新闻</a></li>
-                            <li role="presentation"><a href="#">关于我们</a></li>
+                            <li role="presentation" class="active"><a href="../04/index.html">首页</a></li>
+                            <li role="presentation"><a href="../04/news/news.html">新闻</a></li>
+                            <li role="presentation"><a href="../04/aboutMe/about-me.html">关于我们</a></li>
                         </ul>
                     </div>
                     <div class="col-xs-1  hidden-lg hidden-md">
@@ -40,8 +40,6 @@
                                 <li><a href="#">首页</a></li>
                                 <li><a href="#">新闻</a></li>
                                 <li><a href="#">关于我们</a></li>
-                                <!-- <li role="separator" class="divider"></li>
-                              <li><a href="#">Separated link</a></li> -->
                             </ul>
                         </div>
                     </div>
@@ -55,6 +53,9 @@
                 <div class="swiper-slide"><img src="./assets/banner3.jpg" alt="">
                 </div>
             </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
         </div>
         <div class="container">
             <div class="title">
@@ -76,7 +77,7 @@
                     <div class="item-img float-left">
                         <img src="./assets/banner2.jpg" alt="">
                     </div>
-                      <div class="item-intro float-right">
+                    <div class="item-intro float-right">
                         <div class="movie-name">绿巨人</div>
                         <p>
                             《绿巨人浩克》（Hulk）是环球影业出品的一部超级英雄电影，改编自漫威漫画，由李安执导，艾瑞克·巴纳、詹妮弗·康纳利、尼克·诺特主演，影片于2003年6月20日在美国上映，于2003年10月10日在中国大陆上映。影片讲述科学家布鲁斯班纳在命运安排下成了父亲基因改造实验的试验品，每当情绪激动就变身成绿巨人，这使他成为美国军方的缉捕对象
@@ -97,10 +98,10 @@
 
             </div>
             <div class="title">
-                新闻动态    
+                新闻动态
             </div>
             <div class="row news">
-                <div class="col-xs-6 col-md-3 news-item">
+                <div class="col-xs-6 col-md-3 col-xs-6 news-item">
                     <div class="item-img">
                         <img src="./assets/bannner1.jpg" alt="">
                     </div>
@@ -112,7 +113,7 @@
                         这是对详细的介绍
                     </div>
                 </div>
-                <div class="col-xs-6 col-md-3 news-item">
+                <div class="col-xs-6 col-md-3 col-xs-6 news-item">
                     <div class="item-img">
                         <img src="./assets/bannner1.jpg" alt="">
                     </div>
@@ -124,7 +125,7 @@
                         这是对详细的介绍
                     </div>
                 </div>
-                <div class="col-xs-6 col-md-3 news-item">
+                <div class="col-xs-6 col-md-3 col-xs-6 news-item">
                     <div class="item-img">
                         <img src="./assets/bannner1.jpg" alt="">
                     </div>
@@ -136,7 +137,7 @@
                         这是对详细的介绍
                     </div>
                 </div>
-                <div class="col-xs-6 col-md-3 news-item">
+                <div class="col-xs-6 col-md-3 col-xs-6 news-item">
                     <div class="item-img">
                         <img src="./assets/bannner1.jpg" alt="">
                     </div>
@@ -151,35 +152,36 @@
             </div>
         </div>
         <footer>
-            <div class="information">
-                <div class="info-item">
-                    <img src="./assets/location.png" alt="" srcset="">
-                    <div class="description">
-                        成都市武侯区
+            <div class="container footer">
+                <div class="row information">
+                    <div class="col-md-3 col-xs-6 info-item">
+                        <img src="./assets/location.png" alt="" srcset="">
+                        <div class="description clearfix">
+                            成都市武侯区
+                        </div>
                     </div>
-                </div>
-                <div class="info-item">
-                    <img src="./assets/emial.png" alt="" srcset="">
-                    <div class="description">
-                        email@admain.com.cn
+                    <div class="col-md-3 col-xs-6 info-item">
+                        <img src="./assets/emial.png" alt="" srcset="">
+                        <div class="description clearfix">
+                            email@admain.com.cn
+                        </div>
                     </div>
-                </div>
-                <div class="info-item">
-                    <img src="./assets/telephone.png" alt="" srcset="">
-                    <div class="description">
-                        123-482-2684
+                    <div class="col-md-3 col-xs-6 info-item">
+                        <img src="./assets/telephone.png" alt="" srcset="">
+                        <div class="description clearfix">
+                            123-482-2684
+                        </div>
                     </div>
-                </div>
-                <div class="info-item qrCode">
-                    <img src="./assets/mmqrcode1627285639457.png" alt="" srcset="">
-                    <div class="description">
-                        扫一扫添加微信
+                    <div class="col-md-3 col-xs-6 info-item special">
+                        <img src="./assets/mmqrcode1627285639457.png" alt="" srcset="">
+                        <div class="description clearfix">
+                            扫一扫添加微信
+                        </div>
                     </div>
                 </div>
             </div>
-
             <div class="copyright">
-                版权所有@星美国际影城
+                版权所有@Aoshisen
             </div>
         </footer>
     </div>
@@ -191,7 +193,17 @@
 <script src="./js/lazysizes.min.js" async=""></script>
 <script>
     //初始化banner
-    var mySwiper = new Swiper('.banner')
+    var mySwiper = new Swiper('.banner', {
+        autoplay: true,
+        navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+        // pagination: {
+        //     el: '.swiper-pagination',
+        // }
+
+    })
 
     let movieDatas, newDatas;
     let movieItems = document.querySelectorAll(".movie-item");

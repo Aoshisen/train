@@ -7,17 +7,13 @@ body{
         padding: 0 100px;
     }
 }
-.banner{
-    width: 100%;
-    height: 800px;
-    overflow: hidden;
-}
+
 
 .banner .swiper-slide{
     width: 100%;
 }
 .banner .swiper-slide img {
-    width: 1920px;
+    width:100%
 }
 
 .movie-item{
