@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -12,13 +13,14 @@
     <link rel="stylesheet" href="./about-me.css">
     <script type="text/javascript" src="../js/baidumap.js"></script>
 </head>
+
 <body>
     <div class="about-me">
         <header>
             <div class="container">
                 <div class="row">
                     <div class="col-md-8  col-xs-11">
-                        <img src="./assets/logo.jpg" alt="" class="logo">
+                        <img src="../assets/logo.jpg" alt="" class="logo">
                         <div class="name">星美国际影城</div>
                     </div>
                     <div class="col-md-4  hidden-sm hidden-xs">
@@ -59,13 +61,13 @@
                         电影院必须满足电影放映的工艺要求，得到应有的良好视觉和听觉效果，电影已经成为人们饭后的论点。
                     </p>
                     <div class="info">
-                        locate:  四川省成都市天府大道中段
+                        locate: 四川省成都市天府大道中段
                     </div>
                     <div class="info">
-                        email:  admain@textexample.com.cn
+                        email: admain@textexample.com.cn
                     </div>
                     <div class="info">
-                        telephone:  453-126-3349
+                        telephone: 453-126-3349
                     </div>
                 </div>
             </div>
@@ -105,42 +107,47 @@
         </footer>
     </div>
 </body>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js" rel="external nofollow"></script>
+<script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js" rel="external nofollow"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
 <script type="text/javascript">
     //创建和初始化地图函数：
-    function initMap(){
-      createMap();//创建地图
-      setMapEvent();//设置地图事件
-      addMapControl();//向地图添加控件
-      addMapOverlay();//向地图添加覆盖物
+    function initMap() {
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+        addMapOverlay();//向地图添加覆盖物
     }
-    function createMap(){ 
-      map = new BMap.Map("map"); 
-      map.centerAndZoom(new BMap.Point(104.077912,30.554317),18);
+    function createMap() {
+        map = new BMap.Map("map");
+        map.centerAndZoom(new BMap.Point(104.077912, 30.554317), 18);
     }
-    function setMapEvent(){
-      map.enableScrollWheelZoom();
-      map.enableKeyboard();
-      map.enableDragging();
-      map.enableDoubleClickZoom()
+    function setMapEvent() {
+        map.enableScrollWheelZoom();
+        map.enableKeyboard();
+        map.enableDragging();
+        map.enableDoubleClickZoom()
     }
-    function addClickHandler(target,window){
-      target.addEventListener("click",function(){
-        target.openInfoWindow(window);
-      });
+    function addClickHandler(target, window) {
+        target.addEventListener("click", function () {
+            target.openInfoWindow(window);
+        });
     }
-    function addMapOverlay(){
+    function addMapOverlay() {
     }
     //向地图添加控件
-    function addMapControl(){
-      var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
-      scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
-      map.addControl(scaleControl);
-      var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
-      map.addControl(navControl);
-      var overviewControl = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:true});
-      map.addControl(overviewControl);
+    function addMapControl() {
+        var scaleControl = new BMap.ScaleControl({ anchor: BMAP_ANCHOR_BOTTOM_LEFT });
+        scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+        map.addControl(scaleControl);
+        var navControl = new BMap.NavigationControl({ anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_LARGE });
+        map.addControl(navControl);
+        var overviewControl = new BMap.OverviewMapControl({ anchor: BMAP_ANCHOR_BOTTOM_RIGHT, isOpen: true });
+        map.addControl(overviewControl);
     }
     var map;
-      initMap();
-  </script>
+    initMap();
+</script>
+
 </html>
