@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="../footer.css">
     <link rel="stylesheet" href="../header.css">
     <link rel="stylesheet" href="./news-detail.css">
@@ -13,15 +15,34 @@
 
 <body>
     <div class="news-detail">
-        <header class="header">
-            <div class="intro">
-                <div class="logo"><img src="../assets/logo.jpg" alt=""></div>
-                <div class="name">星美国际影城</div>
-            </div>
-            <div class="menu">
-                <a href="../index.html">首页</a>
-                <a href="../news/news.html">新闻</a>
-                <a href="../aboutMe/about-me.html">关于我们</a>
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8  col-xs-11">
+                        <img src="../assets/logo.jpg" alt="" class="logo">
+                        <div class="name">星美国际影城</div>
+                    </div>
+                    <div class="col-md-4  hidden-sm hidden-xs">
+                        <ul class="nav nav-tabs">
+                            <li role="presentation"><a href="../index.html">首页</a></li>
+                            <li role="presentation" class="active"><a href="../news/news.html">新闻</a></li>
+                            <li role="presentation"><a href="../aboutMe/about-me.html">关于我们</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-1  hidden-lg hidden-md">
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+                                <li><a href="#">首页</a></li>
+                                <li><a href="#">新闻</a></li>
+                                <li><a href="#">关于我们</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </header>
         <div class="content">
@@ -51,35 +72,36 @@
             </div>
         </div>
         <footer>
-            <div class="information">
-                <div class="info-item">
-                    <img src="../assets/location.png" alt="" srcset="">
-                    <div class="description">
-                        成都市武侯区
+            <div class="container footer">
+                <div class="row information">
+                    <div class="col-md-3 col-xs-6 info-item">
+                        <img src="../assets/location.png" alt="" srcset="">
+                        <div class="description clearfix">
+                            成都市武侯区
+                        </div>
                     </div>
-                </div>
-                <div class="info-item">
-                    <img src="../assets/emial.png" alt="" srcset="">
-                    <div class="description">
-                        email@admain.com.cn
+                    <div class="col-md-3 col-xs-6 info-item">
+                        <img src="../assets/emial.png" alt="" srcset="">
+                        <div class="description clearfix">
+                            email@admain.com.cn
+                        </div>
                     </div>
-                </div>
-                <div class="info-item">
-                    <img src="../assets/telephone.png" alt="" srcset="">
-                    <div class="description">
-                        123-482-2684
+                    <div class="col-md-3 col-xs-6 info-item">
+                        <img src="../assets/telephone.png" alt="" srcset="">
+                        <div class="description clearfix">
+                            123-482-2684
+                        </div>
                     </div>
-                </div>
-                <div class="info-item qrCode">
-                    <img src="../assets/mmqrcode1627285639457.png" alt="" srcset="">
-                    <div class="description">
-                        扫一扫添加微信
+                    <div class="col-md-3 col-xs-6 info-item special">
+                        <img src="../assets/mmqrcode1627285639457.png" alt="" srcset="">
+                        <div class="description clearfix">
+                            扫一扫添加微信
+                        </div>
                     </div>
                 </div>
             </div>
-
             <div class="copyright">
-                版权所有@星美国际影城
+                版权所有@Aoshisen
             </div>
         </footer>
     </div>

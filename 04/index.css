@@ -8,7 +8,10 @@ body{
     }
 }
 
-
+.banner {
+    width: 100%;
+    background-color: yellow;
+}
 .banner .swiper-slide{
     width: 100%;
 }

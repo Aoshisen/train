@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="./footer.css">
     <link rel="stylesheet" href="./index.css">
 </head>
-
 <body>
     <div class="index">
         <header>
@@ -47,14 +46,16 @@
             </div>
         </header>
         <div class="banner">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="./assets/bannner1.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="./assets/banner2.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="./assets/banner3.jpg" alt="">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="./assets/banner04.jpg" alt="" srcset=""></div>
+                    <div class="swiper-slide"><img src="./assets/banner05.jpg" alt="" srcset=""></div>
+                    <div class="swiper-slide"><img src="./assets/banner06.jpg" alt="" srcset=""></div>
                 </div>
+                <div class="swiper-pagination"></div><!--分页器。如果放置在swiper-container外面，需要自定义样式。-->
             </div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+            
+        </div>
         </div>
         </div>
         <div class="container">
@@ -189,25 +190,16 @@
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js" rel="external nofollow" ></script>
 <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js" rel="external nofollow" ></script>
 <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="./js/lazysizes.min.js" async=""></script>
 <script>
     //初始化banner
-    var mySwiper = new Swiper('.banner', {
-        autoplay: true,
-        navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-        // pagination: {
-        //     el: '.swiper-pagination',
-        // }
-
-    })
-
+    var mySwiper = new Swiper('.swiper-container',{
+pagination: {
+    el: '.swiper-pagination',
+  },
+})
     let movieDatas, newDatas;
     let movieItems = document.querySelectorAll(".movie-item");
     let newsItems = document.querySelectorAll('.news .news-item');
