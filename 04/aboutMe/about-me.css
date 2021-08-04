@@ -29,9 +29,15 @@ body{
 .main .main-right{
     width: 50%;
     height: 100%;
+
     margin-left: 20px;
 }
 
 .main-right .info {
+    position: relative;
     line-height: 35px;
+}
+.main-right span {
+    position: absolute;
+    left: 40px;
 }
