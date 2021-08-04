@@ -2,4 +2,24 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    min-width: 1071px;
+}
+.first-nav{
+    margin-right: 100px;
+}
+.header{
+    text-align: center;
+    padding: 0 200px;
+}
+.classification{
+    display: flex;
+    justify-content: center;
+}
+.classification li{
+    width: 100px;
+    list-style: none;
+    cursor: pointer;
+}
+.active{
+    color: red;
 }
