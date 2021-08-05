@@ -34,7 +34,8 @@ class App extends Component {
     handleClick = async (index) => {
         console.log("Asdasdadsdsasdasd");
         await this.setState({ activeIndex: index })
-        // this.setState({ currentPage: 1 })
+        this.setState({ currentPage: 1 })
+        this.setState({datas:[]})
         await fetch(`https://api.github.com/search/repositories?q=${urls[this.state.activeIndex]}&sort=starts&order=desc&type=Repositories&page=${this.state.currentPage}`).then(res =>
             res.json()
         ).then(res => this.setState({
@@ -112,7 +113,7 @@ class App extends Component {
                             </ul>
                         </div>
                         <div className="content">
-                            {datas.map((item, index) => {
+                            {datas&&datas.map((item, index) => {
                                 return <ListItem key={index} data={{ ...item, id: index }} />
                             })}
                         </div>
