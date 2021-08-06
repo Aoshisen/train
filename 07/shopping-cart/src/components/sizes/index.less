@@ -1,0 +1,47 @@
+
+.filters{
+  width: 200px;
+  .title{
+    margin-top: 2px;
+    margin-bottom: 20px;
+  }
+  text-align: center;
+  h4{
+    text-align: left;
+  }
+  &-group{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &-item{
+    font-size: 12px;
+    border: 1px solid transparent;
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 37px;
+    background-color: #ECECEC;
+    margin: 0 6px 10px 0;
+    
+  }
+  .star {
+      color: #ADBBD3;
+    small{
+        margin: 10px;
+    }
+    }
+  &-item:hover{
+    border: 1px solid #1B1A20;
+  }
+  &-item:active{
+    border: 1px solid transparent;
+    background-color: #1B1A20;
+    color: #fff;
+  }
+  .active{
+    border: 1px solid transparent;
+    background-color: #1B1A20;
+    color: #fff;
+  }
+}
