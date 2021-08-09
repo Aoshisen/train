@@ -12,7 +12,7 @@ function getRandomColor(){
   return color
 } 
 function draw(ele,passTime){
-  ele.style.right=passTime/4+'px'
+  ele.style.right=-100+passTime/4+'px'
 }
 
 //发射的逻辑
@@ -24,7 +24,7 @@ span.style.width="100px"
 span.style.color=getRandomColor();
 span.style.fontSize=Math.random()*12+12+'px'
 span.style.top=Math.random()*400+'px'
-span.style.right="0px"
+span.style.right="-100px"
 let start=Date.now()
 let timer=setInterval(()=>{
   let passTime=Date.now()-start;
