@@ -10,7 +10,7 @@ body{
 
 .banner {
     width: 100%;
-    background-color: yellow;
+    background-color: #eee;
 }
 .banner .swiper-slide{
     width: 100%;
