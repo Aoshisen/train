@@ -4,6 +4,7 @@ import Sizes from "../components/sizes"
 import { useEffect, useState } from 'react';
 import styles from './index.less';
 export default function IndexPage() {
+  //下拉菜单
   const menu = (
     <Menu>
       <Menu.Item key={0}>
@@ -24,7 +25,7 @@ export default function IndexPage() {
     </Menu>
   );
   //抽屉
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
   const traggleShowDrawer = () => {
     setVisible(!visible);
   };
@@ -84,12 +85,15 @@ export default function IndexPage() {
           </div>
 
           {/* 侧边栏 */}
-            <Button type="primary" onClick={traggleShowDrawer} className={styles['aside-button']}>
+            {/* <Button type="primary" onClick={traggleShowDrawer} className={styles['aside-button']}>
               Open
-            </Button>
+            </Button> */}
             <Drawer
               title={<>
-              <Button className={styles['drawer-button']} type="primary" onClick={traggleShowDrawer}>Open</Button>
+              {
+                !visible?<Button className={styles['drawer-button']} type="primary" onClick={traggleShowDrawer}><Badge offset={['0','35px']} count={1} color={"#EABF00"} showZero={true}><Avatar shape="square" src={require('../static/bag-icon.png')}></Avatar></Badge></Button>:
+                <Button className={styles['drawer-button']} type="primary" onClick={traggleShowDrawer}>X</Button>
+              }
               <div className={styles['header-cart']}><Badge offset={['0','40px']} count={1} color={"#EABF00"} showZero={true} size={'small'}><Avatar shape="square" size="large" src={require('../static/bag-icon.png')}></Avatar></Badge><span style={{marginLeft:"20px"}}>Cart</span></div>
               </>}
               placement="right"
@@ -99,11 +103,14 @@ export default function IndexPage() {
               contentWrapperStyle={{width:"500px"}}
               className={styles['aside']}
               mask={false}
-              headerStyle={{height:"130px",backgroundColor:"#1B1A20"}}
+              headerStyle={{height:"130px",backgroundColor:"#1B1A20",border:"none"}}
+              bodyStyle={{backgroundColor:"#1B1A20"}}
             >
-              <p>Some contents...</p>
-              <p>Some contents...</p>
-              <p>Some contents...</p>
+              <div className={styles['cart-item']}>
+                <img src={require(`../static/products/876661122392077_2.jpg`)} alt="" />
+                <div className={styles['item-center']}></div>
+                <div className={styles['item-right']}></div>
+              </div>
             </Drawer>
         </>
     }

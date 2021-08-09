@@ -1,11 +1,16 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser,faFighterJet,faTrophy} from '@fortawesome/free-solid-svg-icons'
 
 import "./index.css"
 export default function Battle(){
-    let [player1,setPlayer1]=useState('')
-    let [player2,setPlayer2]=useState('')
+    let [player1,setPlayer1]=useState(sessionStorage.getItem('player1')||'')
+    let [player2,setPlayer2]=useState(sessionStorage.getItem('player2')||'')
+    useEffect(()=>{
+         return ()=>{
+             console.log("我卸载了")
+         }
+    },[])
 
     return <div className="instructions">
         <h1>instruction</h1>
@@ -35,18 +40,18 @@ export default function Battle(){
                 <p>player1</p>
                 <input onChange={({target})=>{
                     setPlayer1(target.value)
-                    console.log(player1);
                 }} value={player1}></input> <button disabled={!player1} onClick={()=>{
-                    setPlayer1('')
+                    sessionStorage.setItem('player1',player1)
+                    // setPlayer1('')
                 }}>submit</button>
             </div>
             <div>
                 <p>player1</p>
                 <input  onChange={({target})=>{
                     setPlayer2(target.value)
-                    console.log(player1);
                 }} value={player2}></input> <button disabled={!player2} onClick={()=>{
-                    setPlayer2("")
+                    sessionStorage.setItem('player2',player2)
+                    // setPlayer2("")
                 }}>submit</button>
             </div>
         </div>
