@@ -2,10 +2,33 @@
   .ant-drawer-content{
     overflow: visible;
   }
+  .ant-badge-count{
+    box-shadow: unset;
+  }
+}
+@media screen and(max-width:1200px){
+  .self-group .self-item{
+    width: 33.3%;
+  }
+}
+@media screen and(min-width:1200px){
+  .self-group .self-item{
+    width: 25%;
+  }
+}
+@media screen and(max-width:760px){
+  .self-group .self-item{
+    width: 50%;
+  }
+}
+@media screen and(max-width:540px){
+  .self-group .self-item{
+    width: 100%;
+  }
 }
 .content{
   margin: 50px auto;
-  width: 1000px; 
+  max-width: 1200px; 
   .header{
     display: flex;
     justify-content: space-between;
@@ -13,17 +36,24 @@
     margin-bottom: 10px;
   }
 }
+.clearfix::after{
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
 .loading {
   padding: 30px 50px;
   text-align: center;
-  background: rgba(0, 0, 0, 0.05);
   border-radius: 4px;
 }
 .self-group{
   display: flex;
   flex-wrap: wrap;
   .self-item{
-    width: 25%;
+    // width: 25%;
     position: relative;
     padding: 20px;
     border: 1px solid transparent;
@@ -116,15 +146,77 @@
  .cart-item{
    height: 135px;
    padding: 22px;
-   background-color: #fff;
-
+   background-color: #1b1a20;
+   &::before{
+     width:100%;
+     position: relative;
+     content:"";
+     display: block;
+     height: 2px;
+     background-color: #16151A;
+     top: -20px;
+   }
    img{
      height: 100%;
      float: left;
      background-color: #ececec;
    }
+   .item-center{
+     float: left;
+     height: 100%;
+     padding-left: 20px;
+     p{
+       margin: 0;
+     }
+    .center-title{
+      font-size: larger;
+      color: #fff;
+      font-weight: 400px;
+      margin-top: 10px;
+    }
+    .center-desc{
+      color:#565559;
+      font-size: 16px;
+    }
+   }
    .item-right{
-     float:right
+     float: right;
+     height: 100%;
+     p{
+       margin:16px 0;
+       color:#eabf00;
+       font-size: 20px; 
+     }
+     .btn-group{
+       float: right;
+     }
+     .disabled{
+      width: 22px;
+      height: 22px;
+      padding: 0;
+      color: #fff;
+      margin-right:-1px;
+      background-color: #16151A;
+      border: none;
+      border-radius: 0;
+      cursor: default;
+      span {
+        height: 100%;
+      }
+     }
+     .add,.min{
+       width: 22px;
+       height: 22px;
+       padding: 0;
+       color: #fff;
+       margin-right:-1px;
+       background-color: #000;
+       border: none;
+       border-radius: 0;
+       span {
+         height: 100%;
+       }
+     }
    }
  }
  

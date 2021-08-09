@@ -12,7 +12,7 @@ export default function Sizes() {
             })
           }</div>
           <div className={styles['star']}>
-            <small>Leave a star on Github if this repository was useful :)</small>
+            <small>Leave a star on Github if this repository was useful :)</small><br />
             <Radio.Group>
               <Radio.Button value="star" style={{backgroundColor:"#E9EBEF"}}><StarOutlined /><a href="https://github.com/jeffersonRibeiro/react-shopping-cart" target="_blank" rel="noopener noreferrer">star</a></Radio.Button>
               <Radio.Button value="1748"><a href="https://github.com/jeffersonRibeiro/react-shopping-cart/stargazers" target="_blank" rel="noopener noreferrer">1,748</a></Radio.Button>
