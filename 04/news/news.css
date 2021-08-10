@@ -3,7 +3,7 @@ body {
     margin: 0;
 }
 .news {
-    min-width: 1000px;
+    /* min-width: 1000px; */
 }
 .banner {
     width: 100%;
@@ -12,17 +12,13 @@ body {
     width: 100%;
     height: 120px;
 }
-.content{
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-    justify-content: space-between;
-    padding: 0 200px;
-}
+/* .content{
+   
+} */
 .content .content-item {
     margin: 25px 0;    
-    width: 550px;
-    /* height: 350px; */
+    /* width: 550px; */
+    height: 150px;
 }
 .content-item .item-left{
     height: 100%;

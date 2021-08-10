@@ -46,11 +46,12 @@
             </div>
         </header>
         <div class="banner"><img src="../assets/新闻动态banner.png" alt=""></div>
-        <div class="content">
+        <div class="container">
+           <div class="content row">
             <!-- 这里是列表渲染 -->
-            <div class="content-item">
+            <div class="content-item col-md-6">
                 <div class="item-left">
-                    <img src="" alt="">
+                    <img data-src="" alt="" class="lazyload">
                     <!-- <img src="../assets/banner2.jpg" alt=""> -->
                 </div>
                 <div class="item-right">
@@ -67,9 +68,9 @@
                     </div>
                 </div>
             </div>
-            <div class="content-item">
+            <div class="content-item col-md-6"">
                 <div class="item-left">
-                    <img src="" alt="">
+                    <img data-src="" alt="" class="lazyload">
                     <!-- <img src="../assets/banner2.jpg" alt=""> -->
                 </div>
                 <div class="item-right">
@@ -86,9 +87,9 @@
                     </div>
                 </div>
             </div>
-            <div class="content-item">
+            <div class="content-item col-md-6">
                 <div class="item-left">
-                    <img src="" alt="">
+                    <img data-src="" alt="" class="lazyload">
                     <!-- <img src="../assets/banner2.jpg" alt=""> -->
                 </div>
                 <div class="item-right">
@@ -105,9 +106,9 @@
                     </div>
                 </div>
             </div>
-            <div class="content-item">
+            <div class="content-item col-md-6">
                 <div class="item-left">
-                    <img src="" alt="">
+                    <img data-src="" alt="" class="lazyload">
                     <!-- <img src="../assets/banner2.jpg" alt=""> -->
                 </div>
                 <div class="item-right">
@@ -124,9 +125,9 @@
                     </div>
                 </div>
             </div>
-            <div class="content-item">
+            <div class="content-item col-md-6">
                 <div class="item-left">
-                    <img src="" alt="">
+                    <img data-src="" alt="" class="lazyload">
                     <!-- <img src="../assets/banner2.jpg" alt=""> -->
                 </div>
                 <div class="item-right">
@@ -142,9 +143,9 @@
                         Douglas 饰）成为了他的导师，可皮姆博士的女儿霍普（伊万杰琳·莉莉 Evangeline Lilly 饰）却并不看好他。 -->
                     </div>
                 </div>
-            </div> <div class="content-item">
+            </div> <div class="content-item col-md-6">
                 <div class="item-left">
-                    <img src="" alt="">
+                    <img data-src="" alt="" class="lazyload">
                     <!-- <img src="../assets/banner2.jpg" alt=""> -->
                 </div>
                 <div class="item-right">
@@ -160,9 +161,9 @@
                         Douglas 饰）成为了他的导师，可皮姆博士的女儿霍普（伊万杰琳·莉莉 Evangeline Lilly 饰）却并不看好他。 -->
                     </div>
                 </div>
-            </div> <div class="content-item">
+            </div> <div class="content-item col-md-6">
                 <div class="item-left">
-                    <img src="" alt="">
+                    <img data-src="" alt="" class="lazyload">
                     <!-- <img src="../assets/banner2.jpg" alt=""> -->
                 </div>
                 <div class="item-right">
@@ -178,9 +179,9 @@
                         Douglas 饰）成为了他的导师，可皮姆博士的女儿霍普（伊万杰琳·莉莉 Evangeline Lilly 饰）却并不看好他。 -->
                     </div>
                 </div>
-            </div> <div class="content-item">
+            </div> <div class="content-item col-md-6">
                 <div class="item-left">
-                    <img src="" alt="">
+                    <img data-src="" alt="" class="lazyload">
                     <!-- <img src="../assets/banner2.jpg" alt=""> -->
                 </div>
                 <div class="item-right">
@@ -204,7 +205,9 @@
                         <span>3</span>
                         <button class="after"> > </button>
             </div>
+        </div> 
         </div>
+        
         <footer>
             <div class="container footer">
                 <div class="row information">
@@ -241,6 +244,7 @@
     </div>
 </body>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="../js/lazysize.js"></script>
 <script>
     let contentDatas;
     let contentItems = document.querySelectorAll(".content-item");
@@ -260,10 +264,13 @@
                 let intro = item.querySelector(".item-right .intro");
                 let createAt = item.querySelector('.item-right .create-at')
                 let detailed = item.querySelector(".item-right .detailed")
+                img.setAttribute('data-src',contentDatas[index].image)
+                img.removeAttribute('src')
                 img.src = contentDatas[index].image
                 intro.innerHTML = contentDatas[index].title
                 createAt.innerHTML = contentDatas[index].passtime
-                detailed.innerHTML = contentDatas[index].title.repeat(4)
+                detailed.innerHTML = contentDatas[index].title.repeat(3)
+                console.log(img)
             })
         })
         let spans = document.querySelectorAll("span");

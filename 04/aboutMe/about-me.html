@@ -12,7 +12,10 @@
     <link rel="stylesheet" href="../header.css">
     <link rel="stylesheet" href="./about-me.css">
     <link rel="stylesheet" href="../fonts/css/font-awesome.min.css">
-    <script type="text/javascript" src="../js/baidumap.js"></script>
+    <!-- <script type="text/javascript" src="../js/baidumap.js"></script> -->
+    <!-- <script type="text/javascript" src="//api.map.baidu.com/api?type=webgl&v=1.0&ak=fKX6tIRNImewD7wwCmWfGOnWNvYo9Qvy"></script> -->
+    
+<script type="text/javascript" src="//api.map.baidu.com/api?type=webgl&v=1.0&ak=7Cc5Kmn672miPzG4qQhvlOrERcXMMinq"></script>
 </head>
 
 <body>
@@ -47,15 +50,14 @@
                 </div>
             </div>
         </header>
-        <div class="content">
+        <div class="container content">
             <div class="title">
                 关于我们
             </div>
-            <div class="main">
-                <div id="map">
-
+            <div class="main row">
+                <div id="map" class="col-md-7" style="height: 300px; margin-bottom: 50px;">
                 </div>
-                <div class="main-right">
+                <div class="main-right col-md-5">
                     <p class="intro">
                         电影院（cinema）是为观众放映电影的场所。电影在产生初期，是在咖啡厅、茶馆等场所放映的。随着电影的进步与发展，出现了专门为放映电影而建造的电影院。
                         电影的发展——从无声到有声乃至立体声，从黑白片到彩色片，从普通银幕到宽银幕乃至穹幕、环幕，使电影院的形体、尺寸、比例和声学技术都发生了很大变化。
@@ -116,7 +118,7 @@
 <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js" rel="external nofollow"></script>
 <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     //创建和初始化地图函数：
     function initMap() {
         createMap();//创建地图
@@ -144,9 +146,19 @@
     }
     function addMapOverlay() {
     }
+    
+        
     //向地图添加控件
     function addMapControl() {
-        var scaleControl = new BMap.ScaleControl({ anchor: BMAP_ANCHOR_BOTTOM_LEFT });
+        var locationControl = new BMapGL.LocationControl({
+            // 控件的停靠位置（可选，默认左上角）
+            anchor: BMAP_ANCHOR_TOP_RIGHT,
+            // 控件基于停靠位置的偏移量（可选）
+            offset: new BMapGL.Size(20, 20)
+        });
+        // 将控件添加到地图上
+        map.addControl(locationControl);
+        var scaleControl = new BMapGL.ScaleControl({ anchor: BMAP_ANCHOR_BOTTOM_LEFT });
         scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
         map.addControl(scaleControl);
         var navControl = new BMap.NavigationControl({ anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_LARGE });
@@ -156,6 +168,45 @@
     }
     var map;
     initMap();
-</script>
+</script> -->
+<script>
+    var map = new BMapGL.Map('map');
+    map.centerAndZoom(new BMapGL.Point(104.077912, 30.554317), 18);
 
+    // 创建定位控件
+    var locationControl = new BMapGL.LocationControl({
+        // 控件的停靠位置（可选，默认左上角）
+        anchor: BMAP_ANCHOR_TOP_RIGHT,
+        // 控件基于停靠位置的偏移量（可选）
+        offset: new BMapGL.Size(20, 20)
+    });
+    // 将定位控件添加到地图上
+    map.addControl(locationControl);
+  // 添加定位事件
+    locationControl.addEventListener("locationSuccess", function(e){
+        var address = '';
+        address += e.addressComponent.province;
+        address += e.addressComponent.city;
+        address += e.addressComponent.district;
+        address += e.addressComponent.street;
+        address += e.addressComponent.streetNumber;
+        alert("当前定位地址为：" + address);
+    });
+    locationControl.addEventListener("locationError",function(e){
+        alert(e.message);
+    });
+
+    //开启缩放功能
+    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+    var scaleCtrl = new BMapGL.ScaleControl();  // 添加比例尺控件
+    map.addControl(scaleCtrl);
+    var zoomCtrl = new BMapGL.ZoomControl();  // 添加比例尺控件
+    map.addControl(zoomCtrl);
+
+    //添加点标记
+    // 创建点标记
+     var marker = new BMapGL.Marker(new BMapGL.Point(104.077912, 30.554317));
+     //向地图上添加点标记
+     map.addOverlay(marker);
+</script>
 </html>

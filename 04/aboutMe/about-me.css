@@ -1,38 +1,21 @@
 body{
     padding: 0;
     margin: 0;
-    /* background-color: #C9CACE; */
 }
-
-.content .title{
+.content{
+    margin-bottom: 100px;
+}
+.title{
     font-size: 30px;
     font-weight: 500;
-    /* background-color: #C0C1C5; */
     width: 100%;
     padding:30px 0 10px 0;
     text-align: center;
 }
-.content .main {
-    margin: 20px 0 150px 0;
-    height: 300px;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 150px;
-    margin-bottom: 300px;
-    }
-.main #map{
-    width: 50%;
-    height: 100%;
-    /* background-color: #00ff; */
-    border: 1px solid #000;
-}
-.main .main-right{
-    width: 50%;
-    height: 100%;
 
-    margin-left: 20px;
+.intro{
+    margin-bottom: 50px;
 }
-
 .main-right .info {
     position: relative;
     line-height: 35px;

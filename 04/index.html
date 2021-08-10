@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="./header.css">
     <link rel="stylesheet" href="./footer.css">
     <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="../fonts/css/font-awesome.min.css">
+
 </head>
 <body>
     <div class="index">
@@ -48,9 +50,9 @@
         <div class="banner">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="./assets/banner04.jpg" alt="" srcset=""></div>
-                    <div class="swiper-slide"><img src="./assets/banner05.jpg" alt="" srcset=""></div>
-                    <div class="swiper-slide"><img src="./assets/banner06.jpg" alt="" srcset=""></div>
+                    <div class="swiper-slide"><img data-src="./assets/banner04.jpg" alt="" srcset="" class="lazyload"></div>
+                    <div class="swiper-slide"><img data-src="./assets/banner05.jpg" alt="" srcset="" class="lazyload"></div>
+                    <div class="swiper-slide"><img data-src="./assets/banner06.jpg" alt="" srcset="" class="lazyload"></div>
                 </div>
                 <div class="swiper-pagination"></div><!--分页器。如果放置在swiper-container外面，需要自定义样式。-->
             </div>
@@ -60,40 +62,51 @@
         </div>
         <div class="container">
             <div class="title">
+                服务范围
+            </div>
+            <div class="row" style="background-color: #F4F4F4;padding:50px 0;">
+                <div class="col-md-3 col-xs-6"><div class="avatar" style="text-align: center;"><i class="fa fa-shield fa-5x" aria-hidden="true" style="color: #989898;"></i></div><div class="desc" style="text-align: center; margin-top: 20px; font-size: 20px; font-weight: 600;">拯救地球</div></div>
+                <div class="col-md-3 col-xs-6"><div class="avatar" style="text-align: center;"><i class="fa fa-users fa-5x" aria-hidden="true" style="color: #989898;"></i></div><div class="desc" style="text-align: center; margin-top: 20px; font-size: 20px; font-weight: 600;">英雄合照</div></div>
+                <div class="col-md-3 col-xs-6"><div class="avatar" style="text-align: center;"><i class="fa fa-map-marker fa-5x" aria-hidden="true" style="color: #989898;"></i></div><div class="desc" style="text-align: center; margin-top: 20px; font-size: 20px; font-weight: 600;">寻找原石</div></div>
+                <div class="col-md-3 col-xs-6"><div class="avatar" style="text-align: center;"><i class="fa fa-grav fa-5x" aria-hidden="true" style="color: #989898;"></i></div><div class="desc" style="text-align: center; margin-top: 20px; font-size: 20px; font-weight: 600;">宇宙旅行</div></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="title">
                 最新上映
             </div>
-            <div class="row recent-movie">
-                <div class="col-xs-12 movie-item">
-                    <div class="item-intro float-left">
+            <div class="recent-movie">
+                <div class="row movie-item">
+                    <div class="item-intro col-md-6">
                         <div class="movie-name">复仇者联盟</div>
                         <p>
                             来自泰坦星的灭霸为了解决宇宙资源匮乏、人口暴增的问题，集齐了所有无限宝石，一个响指成功地使全宇宙生命随机减半。宇宙由于灭霸的行动而变得满目疮痍，但是五年之后，被困在量子领域的蚁人意外回到现实世界，他的出现为幸存的复仇者点燃了希望。无论前方将遭遇怎样的后果，幸存的复仇者都必须在剩余盟友的帮助下再一次集结，以逆转灭霸的所作所为，彻底恢复宇宙的秩序
                         </p>
                     </div>
-                    <div class="item-img float-right">
-                        <img src="./assets/bannner1.jpg" alt="">
+                    <div class="item-img col-md-6">
+                        <img data-src="./assets/bannner1.jpg" alt="" class="lazyload">
                     </div>
                 </div>
-                <div class="col-xs-12 movie-item ">
-                    <div class="item-img float-left">
-                        <img src="./assets/banner2.jpg" alt="">
-                    </div>
-                    <div class="item-intro float-right">
+                <div class="row movie-item">
+                    <div class="item-intro col-md-6 float-right">
                         <div class="movie-name">绿巨人</div>
                         <p>
                             《绿巨人浩克》（Hulk）是环球影业出品的一部超级英雄电影，改编自漫威漫画，由李安执导，艾瑞克·巴纳、詹妮弗·康纳利、尼克·诺特主演，影片于2003年6月20日在美国上映，于2003年10月10日在中国大陆上映。影片讲述科学家布鲁斯班纳在命运安排下成了父亲基因改造实验的试验品，每当情绪激动就变身成绿巨人，这使他成为美国军方的缉捕对象
                         </p>
                     </div>
+                    <div class="item-img col-md-6 float-left" >
+                        <img data-src="./assets/banner2.jpg" alt="" class="lazyload">
+                    </div>
                 </div>
-                <div class="col-xs-12 movie-item">
-                    <div class="item-intro float-left">
+                <div class="row movie-item">
+                    <div class="item-intro col-md-6">
                         <div class="movie-name">黑寡妇</div>
                         <p>
                             《黑寡妇》娜塔莉亚·罗曼诺娃，1928年出生于前苏联的斯大林格勒，自幼被前苏联特工人员训练成特工，身体经前苏联政府改造后大大延缓了其衰老速度，并增强其免疫系统以及抗击打能力，加上本身多年的各种体能及精神上的训练，自身已经成为犹如致命的毒蜘蛛“黑寡妇”，后背叛前苏联特工组织“红房”，加入复仇者联盟，其年龄仅比美国队长小10岁
                         </p>
                     </div>
-                    <div class="item-img float-right">
-                        <img src="./assets/banner3.jpg" alt="">
+                    <div class="item-img col-md-6">
+                        <img data-src="./assets/banner3.jpg" alt="" class="lazyload">
                     </div>
                 </div>
 
@@ -104,7 +117,7 @@
             <div class="row news">
                 <div class="col-xs-6 col-md-3 col-xs-6 news-item">
                     <div class="item-img">
-                        <img src="./assets/bannner1.jpg" alt="">
+                        <img data-src="" alt="" class="lazyload">
                     </div>
                     <div class="intro">
                         这是一段简短的介绍的话
@@ -116,7 +129,7 @@
                 </div>
                 <div class="col-xs-6 col-md-3 col-xs-6 news-item">
                     <div class="item-img">
-                        <img src="./assets/bannner1.jpg" alt="">
+                        <img data-src="" alt="" class="lazyload">
                     </div>
                     <div class="intro">
                         这是一段简短的介绍的话
@@ -128,7 +141,7 @@
                 </div>
                 <div class="col-xs-6 col-md-3 col-xs-6 news-item">
                     <div class="item-img">
-                        <img src="./assets/bannner1.jpg" alt="">
+                        <img data-src="" alt="" class="lazyload">
                     </div>
                     <div class="intro">
                         这是一段简短的介绍的话
@@ -140,7 +153,7 @@
                 </div>
                 <div class="col-xs-6 col-md-3 col-xs-6 news-item">
                     <div class="item-img">
-                        <img src="./assets/bannner1.jpg" alt="">
+                        <img data-src="" alt="" class="lazyload">
                     </div>
                     <div class="intro">
                         这是一段简短的介绍的话
@@ -192,7 +205,7 @@
 <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script src="./js/lazysizes.min.js" async=""></script>
+<script src="./js/lazysize.js" async=""></script>
 <script>
     //初始化banner
     var mySwiper = new Swiper('.swiper-container',{
@@ -213,10 +226,10 @@ pagination: {
                 let Img = item.querySelector('.item-img img')
                 let intro = item.querySelector('.intro')
                 let main = item.querySelector('.main')
-                Img.src = newDatas[index].image
+                Img.setAttribute('data-src',newDatas[index].image)
+                Img.setAttribute('src',newDatas[index].image)
                 intro.innerHTML = newDatas[index].title
                 main.innerHTML = newDatas[index].title.repeat(3)
-                console.log(Img, intro, main);
             })
         }
     ).catch((error) => {

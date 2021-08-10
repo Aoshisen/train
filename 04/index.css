@@ -20,14 +20,11 @@ body{
 }
 
 .movie-item{
-    justify-content: space-around;
-    margin: 15px 0;
+    width: 100%;text-align: center;
 }
 
 .movie-item .item-intro{
-    height: 300px;
     overflow:hidden;
-    width: 50%;
 }
 .float-left{
     float: left;
@@ -37,9 +34,8 @@ body{
 }
 
 
-.movie-item .item-img{
-    width: 50%;
-    line-height: 300px;
+.movie-item{
+    margin-bottom: 20px;
 }
 .movie-item .item-intro p {
     margin: 10px 0;
@@ -50,6 +46,7 @@ body{
 .movie-item .item-img img{
     width: 100%;
 }
+
 
 
 .news-title {
