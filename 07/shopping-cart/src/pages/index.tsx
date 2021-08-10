@@ -3,9 +3,7 @@ import { DownOutlined } from '@ant-design/icons'
 import Sizes from "../components/sizes"
 import { useEffect, useState } from 'react';
 import styles from './index.less';
-
-import {connect} from 'dva'
-let IndexPage=(props) =>{
+let IndexPage=() =>{
   //下拉菜单
   const menu = (
     <Menu>
@@ -129,4 +127,4 @@ let IndexPage=(props) =>{
         </Drawer>
       </>
 }
-export default connect(({ goods }) => ({ goods }))(IndexPage);
+export default IndexPage;

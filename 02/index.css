@@ -128,3 +128,10 @@ footer {
         height: 40px;
         background-color: blue;
     }
+
+
+    .flex{
+        display:flex;
+        align-items: flex-end;
+        flex-wrap: wrap;
+    }

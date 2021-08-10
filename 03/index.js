@@ -40,7 +40,7 @@ span.innerHTML=input.value;
 console.log(input.value);
 //添加元素到container
 container.append(span)
-// input.value=null
+input.value=null
 })
 
 //清屏的逻辑
