@@ -117,7 +117,7 @@ class App extends Component {
                                 return <ListItem key={index} data={{ ...item, id: index }} />
                             })}
                         </div>
-                        {this.state.loading ? <div>加载中请稍后......</div> : ""}
+                        {this.state.loading ? <div className='loading'>加载中请稍后......</div> : ""}
                     </>}
                 />
                 <Route path={['/battle']} component={Battle} />

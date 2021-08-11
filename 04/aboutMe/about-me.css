@@ -4,6 +4,9 @@ body{
 }
 .content{
     margin-bottom: 100px;
+    min-height: 450px;
+    display: flex;
+    align-items: center;
 }
 .title{
     font-size: 30px;

@@ -12,9 +12,6 @@
     <link rel="stylesheet" href="../header.css">
     <link rel="stylesheet" href="./about-me.css">
     <link rel="stylesheet" href="../fonts/css/font-awesome.min.css">
-    <!-- <script type="text/javascript" src="../js/baidumap.js"></script> -->
-    <!-- <script type="text/javascript" src="//api.map.baidu.com/api?type=webgl&v=1.0&ak=fKX6tIRNImewD7wwCmWfGOnWNvYo9Qvy"></script> -->
-    
 <script type="text/javascript" src="//api.map.baidu.com/api?type=webgl&v=1.0&ak=7Cc5Kmn672miPzG4qQhvlOrERcXMMinq"></script>
 </head>
 
@@ -23,7 +20,7 @@
         <header>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-8  col-xs-11">
+                    <div class="col-md-8  col-xs-10">
                         <img src="../assets/logo.jpg" alt="" class="logo">
                         <div class="name">星美国际影城</div>
                     </div>
@@ -34,26 +31,26 @@
                             <li role="presentation" class="active"><a href="./about-me.html">关于我们</a></li>
                         </ul>
                     </div>
-                    <div class="col-xs-1  hidden-lg hidden-md">
+                    <div class="col-xs-2  hidden-lg hidden-md">
                         <div class="dropdown">
                             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                 <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
                             </button>
                             <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-                                <li><a href="#">首页</a></li>
-                                <li><a href="#">新闻</a></li>
-                                <li><a href="#">关于我们</a></li>
+                                <li><a href="../index.html">首页</a></li>
+                                <li><a href="../news/news.html">新闻</a></li>
+                                <li><a href="./about-me.html">关于我们</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
+        <div class="title">
+            关于我们
+        </div>
         <div class="container content">
-            <div class="title">
-                关于我们
-            </div>
             <div class="main row">
                 <div id="map" class="col-md-7" style="height: 300px; margin-bottom: 50px;">
                 </div>
@@ -117,58 +114,6 @@
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js" rel="external nofollow"></script>
 <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js" rel="external nofollow"></script>
 <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-
-<!-- <script type="text/javascript">
-    //创建和初始化地图函数：
-    function initMap() {
-        createMap();//创建地图
-        setMapEvent();//设置地图事件
-        addMapControl();//向地图添加控件
-        addMapOverlay();//向地图添加覆盖物
-    }
-    function createMap() {
-        map = new BMap.Map("map");
-        map.centerAndZoom(new BMap.Point(104.077912, 30.554317), 18);
-        point=new BMap.Point(104.077912, 30.554317);
-        mark=new BMap.Marker(point)
-        map.addOverlay(mark)
-    }
-    function setMapEvent() {
-        map.enableScrollWheelZoom();
-        map.enableKeyboard();
-        map.enableDragging();
-        map.enableDoubleClickZoom()
-    }
-    function addClickHandler(target, window) {
-        target.addEventListener("click", function () {
-            target.openInfoWindow(window);
-        });
-    }
-    function addMapOverlay() {
-    }
-    
-        
-    //向地图添加控件
-    function addMapControl() {
-        var locationControl = new BMapGL.LocationControl({
-            // 控件的停靠位置（可选，默认左上角）
-            anchor: BMAP_ANCHOR_TOP_RIGHT,
-            // 控件基于停靠位置的偏移量（可选）
-            offset: new BMapGL.Size(20, 20)
-        });
-        // 将控件添加到地图上
-        map.addControl(locationControl);
-        var scaleControl = new BMapGL.ScaleControl({ anchor: BMAP_ANCHOR_BOTTOM_LEFT });
-        scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
-        map.addControl(scaleControl);
-        var navControl = new BMap.NavigationControl({ anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_LARGE });
-        map.addControl(navControl);
-        var overviewControl = new BMap.OverviewMapControl({ anchor: BMAP_ANCHOR_BOTTOM_RIGHT, isOpen: true });
-        map.addControl(overviewControl);
-    }
-    var map;
-    initMap();
-</script> -->
 <script>
     var map = new BMapGL.Map('map');
     map.centerAndZoom(new BMapGL.Point(104.077912, 30.554317), 18);
