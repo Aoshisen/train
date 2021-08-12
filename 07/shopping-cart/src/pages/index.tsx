@@ -2,8 +2,10 @@ import { Menu, Dropdown, Button, Spin, Drawer, Badge, Avatar, Radio } from 'antd
 import { DownOutlined } from '@ant-design/icons'
 import Sizes from "../components/sizes"
 import { useEffect, useState } from 'react';
+import { connect,IndexModelState, ConnectRC, Loading } from 'umi';
 import styles from './index.less';
-let IndexPage=() =>{
+let IndexPage=({ index, dispatch }) =>{
+  console.log(name)
   //下拉菜单
   const menu = (
     <Menu>
@@ -41,8 +43,7 @@ let IndexPage=() =>{
     ).catch(error => console.log(error)
     )
   }, [])
-  return  <>
-        {/* 主体内容展示区域*/}
+  return <>{/* 主体内容展示区域*/}
         <div className={styles.content}>
           {/* 左边尺寸表 */}
           <Sizes />
@@ -127,4 +128,10 @@ let IndexPage=() =>{
         </Drawer>
       </>
 }
-export default IndexPage;
+// export default IndexPage;
+export default connect(
+  ({ index, loading }:{ index: IndexModelState; loading: Loading }) => ({
+    index,
+    loading: loading.models.index,
+  }),
+)(IndexPage);

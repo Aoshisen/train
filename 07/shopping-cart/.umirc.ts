@@ -1,7 +1,6 @@
 import { defineConfig } from 'umi';
 
 export default defineConfig({
-  // layout:{},
   nodeModulesTransform: {
     type: 'none',
   },
@@ -9,4 +8,8 @@ export default defineConfig({
     { path: '/', component: '@/pages/index' },
   ],
   fastRefresh: {},
+  dva:{
+    immer: true,
+    hmr: false,
+  }
 });

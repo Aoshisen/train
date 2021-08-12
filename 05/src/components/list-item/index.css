@@ -1,5 +1,6 @@
 .list-item{
-width: 20%;
+max-width: 250px;
+min-width: 200px;
 background-color: #EBEBEB;
 margin: 20px 0;
 height: 400px;

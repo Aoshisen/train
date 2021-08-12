@@ -112,6 +112,15 @@ class Game extends React.Component {
             xIsNext: !this.state.xIsNext,
         });
     }
+    handleReset(){
+        this.setState({
+            history: [{
+                squares: Array(9).fill(null),
+            }],
+            xIsNext: true,
+            stepNumber:0,
+        });
+    }
     jumpTo(step) {
         this.setState({
           stepNumber: step,
@@ -134,7 +143,6 @@ class Game extends React.Component {
               </li>
             );
           });
-
         if (winner) {
             status = 'Winner: ' + winner;
         } else {
@@ -145,6 +153,7 @@ class Game extends React.Component {
                 <Board
                     squares={current.squares}
                     onClick={(i) => this.handleClick(i)} />
+            <button onClick={()=>{this.handleReset()}} style={{marginTop:"20px"}}>重新开始游戏</button>
             </div>
             <div className="game-info">
                 <div>{status}</div>
