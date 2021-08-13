@@ -1,0 +1,72 @@
+.instructions h1{
+    text-align: center;
+}
+.content {
+    padding: 0 200px;
+}
+.content-item{
+    width: 30%;
+    height: 500px;
+    text-align: center;
+}
+.icon{
+    margin-top: 20px;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background-color: #EEEEEE;
+}
+.players{
+    padding:0 100px;
+    display: flex;
+}
+.players .left, .players .right{
+    width: 50%;
+}
+.players div input{
+    width: 80%;
+    height: 40px;
+    font-size: 20px;
+}
+.players div button{
+    width: 15%;
+    height: 46px;
+    position: relative;
+    top: -3px;
+}
+
+.user{
+    width: 95%;
+    height:100px;
+    background-color: #eee;
+    border-radius: 5px;
+}
+.user img {
+    height: 100%;
+    float: left;
+}
+.user .cancel{
+    text-align: center;
+    height: 40px;
+    width:40px;
+    border-radius: 50%;
+    float:right;
+    line-height: 40px;
+    color: aliceblue;
+    font-weight: 900;
+    background-color: red;
+    margin-top: 30px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.winner{
+    margin-top: 20px;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+}
+.winner button{
+    height: 100%;
+    width: 100px;
+    display: inline-block;
+}

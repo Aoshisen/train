@@ -2,39 +2,39 @@ const nav = [
     {
         name: "popular",
         path: "/",
-        render(props){
+        render(){
             return <div> This is 热门项目</div>
         }
     },
     {
         name: "battle",
         path: "/battle",
-        render(props){
-            // return <Battle />
+        render(){
+             return <div>Battle</div>
         }
     }
 ]
 
-const types=['all','good','share','ask','job','dev']
+const types=['all','javascript','ruby','java','css','python']
 
 const indexHeadNav=[{
-    name:"全部",
+    name:"All",
     url:"/?tab=all"
 },{
-    name:"精华",
-    url:"/?tab=good"
+    name:"JavaScript",
+    url:"/?tab=javascript"
 },{
-    name:"分享",
-    url:"/?tab=share"
+    name:"Ruby",
+    url:"/?tab=ruby"
 },{
-    name:"问答",
-    url:"/?tab=ask"
+    name:"Java",
+    url:"/?tab=java"
 },{
-    name:"招聘",
-    url:"/?tab=job"
+    name:"CSS",
+    url:"/?tab=css"
 },{
-    name:"客户端测试",
-    url:"/?tab=dev"
+    name:"Python",
+    url:"/?tab=python"
 },
 ]
 export {nav,types,indexHeadNav}

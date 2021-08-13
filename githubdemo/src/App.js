@@ -1,16 +1,27 @@
 import React,{Component} from "react"
+import { Route,Switch } from "react-router";
 
 //自己定义的组件
 import Header from "./components/header.js"
 
-import "./App.css";
+//自己定义的页面
+import IndexPage from "./pages/indexPage/index.js"
+import BattlePage from "./pages/BattlePage/index.js";
+import Page404 from "./pages/page404/index.js"
+import ResultPage from "./pages/resultPage/index.js";
 
+import "./App.css";
 
 class App extends Component{
     render(){
         return <>
         <Header />
-        {/* <button>this is App</button> */}
+        <Switch>
+            <Route path='/' component={IndexPage} exact></Route>
+            <Route path='/battle' component={BattlePage} exact></Route>
+            <Route path='/result' component={ResultPage} exact></Route>
+            <Route path='' component={Page404}></Route>
+        </Switch>
         </>
     }
 }

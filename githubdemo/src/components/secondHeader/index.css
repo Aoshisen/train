@@ -1,0 +1,22 @@
+@media screen and (min-width:1200px) {
+    header{
+         padding: 0 200px;
+    }
+    .headerItem{
+        width: 100px;
+    }
+}
+@media screen and (max-width:1200px) {
+}
+header{
+    text-align: center;
+}
+.header{
+    display: flex;
+    justify-content: center;
+}
+.headerItem{
+    padding: 0 10px;
+    list-style: none;
+    cursor: pointer;
+}
