@@ -12,7 +12,7 @@ export default function Battle() {
     let [user2Submit, setUser2] = useState(false)
     useEffect(() => {
         return () => {
-            console.log("我卸载了")
+            console.log("Battle页面卸载了")
         }
     }, [])
 
@@ -46,7 +46,18 @@ export default function Battle() {
                             <p>player1</p>
                             <input onChange={({ target }) => {
                                 setPlayer1(target.value)
-                            }} value={player1}></input> <button disabled={!player1} onClick={() => {
+                            }} value={player1}
+                            onKeyDown={(({keyCode})=>{
+                                if(!player1.trim()){
+                                    alert('此输入框为必填字段')
+                                    return;
+                                }
+                                if(keyCode===13){
+                                    sessionStorage.setItem('player1', player1)
+                                setUser1(true)
+                                }
+                            })}
+                            ></input> <button disabled={!player1} onClick={() => {
                                 sessionStorage.setItem('player1', player1)
                                 setUser1(true)
                             }}>submit</button>
@@ -69,7 +80,18 @@ export default function Battle() {
                             <p>player2</p>
                             <input onChange={({ target }) => {
                                 setPlayer2(target.value)
-                            }} value={player2}></input> <button disabled={!player2} onClick={() => {
+                            }} value={player2}
+                            onKeyDown={({keyCode})=>{
+                                if(keyCode===13){
+                                    if(!player2.trim()){
+                                        alert('此输入框为必填字段')
+                                        return;
+                                    }
+                                    sessionStorage.setItem('player2', player2)
+                                    setUser2(true)
+                                }
+                            }}
+                            ></input> <button disabled={!player2} onClick={() => {
                                 sessionStorage.setItem('player2', player2)
                                 setUser2(true)
                             }}>submit</button>
@@ -77,7 +99,7 @@ export default function Battle() {
                         </>
                         :
                         <div className='user'>
-                            <img src={`https://github.com/${player2}.png?size=200`} className='userAatar'></img>
+                            <img src={`https://github.com/${player2}.png?size=200`} className='userAvatar' alt='请求中'></img>
                             <div className='cancel' onClick={() => {
                                 setUser2(false)
                             }}>X</div>

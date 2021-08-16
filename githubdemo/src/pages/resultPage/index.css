@@ -20,6 +20,7 @@
     }
     .result-item img{
         width: 125px;
+        height: 125px;
     }
 .title{
     font-weight: 600;

@@ -16,7 +16,7 @@ const ResultPage = () => {
         fetch(`https://api.github.com/users/${player2}`).then(res => res.json()).then(res => setPlayer2Data(res))
     }, [])
     let calculateWinner = (player1Data, player2Data) => {
-        console.log("我竟来了");
+        console.log("进入计算赢家函数");
         if (player1Data['public_repos'] > player2Data['public_repos']) {
             return {
                 winner: player1Data,
