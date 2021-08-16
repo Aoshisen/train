@@ -7,9 +7,7 @@ import './index.css';
 
 class ListItem extends Component {
   render() {
-    const {
-      id, forks, open_issues, stargazers_count, owner: { avatar_url, login },
-    } = this.props;
+    const {id,data:{forks, open_issues, stargazers_count, owner: { avatar_url, login }}} = this.props;
     return (
       <div className="list-item">
         <div className="title">#{id + 1}</div>

@@ -81,6 +81,7 @@ export default function Battle() {
                               sessionStorage.setItem('player1', player1);
                               setUser1(true);
                             }}
+                            type="button"
                           >submit
                              </button>
 
@@ -88,12 +89,13 @@ export default function Battle() {
                       )
                       : (
                         <div className="user">
-                          <img src={`https://github.com/${player1}.png?size=200`} className="userAatar" />
+                          <img src={`https://github.com/${player1}.png?size=200`} className="userAatar" alt=""/>
                           <div
                             className="cancel"
                             onClick={() => {
                               setUser1(false);
                             }}
+                            aria-hidden="true"
                           >X
                           </div>
                         </div>
@@ -128,6 +130,7 @@ export default function Battle() {
                               sessionStorage.setItem('player2', player2);
                               setUser2(true);
                             }}
+                            type="button"
                           >submit
                              </button>
 
@@ -141,6 +144,7 @@ export default function Battle() {
                             onClick={() => {
                               setUser2(false);
                             }}
+                            aria-hidden="true"
                           >X
                           </div>
                         </div>
@@ -152,7 +156,7 @@ export default function Battle() {
             user1Submit && user2Submit
               ? (
                 <div className="winner">
-                  <button>
+                  <button type="button">
                     <Link to={{
                       pathname: '/result',
                       search: `?player1=${player1}&player2=${player2}`,

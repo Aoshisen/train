@@ -38,30 +38,36 @@
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-loader": "^4.0.2",
     "eslint-plugin-import": "^2.24.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.24.0",
     "husky": "^7.0.1",
+    "less": "^4.1.1",
+    "less-loader": "^10.0.1",
     "lint-staged": "^11.1.2",
+    "optimize-css-assets-webpack-plugin": "^6.0.1",
     "prettier": "^2.3.2",
     "qs": "^6.10.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-fontawesome": "^1.7.1",
     "react-infinite-scroller": "^1.2.4",
+    "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "save": "^2.4.0"
+    "save": "^2.4.0",
+    "terser-webpack-plugin": "^5.1.4"
   },
-  "husky":{
-    "hooks":{
-      "pre-commit":"lint-staged"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
     }
   },
-  "lint-staged":{
-    "src/**/*.{js,jsx,less}":[
+  "lint-staged": {
+    "src/**/*.{js,jsx,less}": [
       "prettier --write",
       "git add"
     ],
-    "**/*.{js,jsx}":"eslint --ext .js"
+    "**/*.{js,jsx}": "eslint --ext .js"
   }
 }

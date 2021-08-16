@@ -15,6 +15,7 @@ module.exports={
         'no-console':0,
         'jsx-ally/anchor-is-valid':0,
         'react/destructuring-assigment':0,
-        'react/jsx-one-expression-per-line':0
+        'react/jsx-one-expression-per-line':0,
+        'camelcase':[0,{"properties":"never"}],
     }
 }

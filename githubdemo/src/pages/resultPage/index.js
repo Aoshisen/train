@@ -17,18 +17,18 @@ const ResultPage = () => {
     fetch(`https://api.github.com/users/${player1}`).then((res) => res.json()).then((res) => setPlayer1Data(res));
     fetch(`https://api.github.com/users/${player2}`).then((res) => res.json()).then((res) => setPlayer2Data(res));
   }, []);
-  const calculateWinner = (player1Data, player2Data) => {
+  const calculateWinner = (Data1, Data2) => {
     console.log('进入计算赢家函数');
-    if (player1Data.public_repos > player2Data.public_repos) {
+    if (Data1.public_repos >Data2.public_repos) {
       return {
-        winner: player1Data,
-        loser: player2Data,
+        winner: Data1,
+        loser: Data2,
       };
     }
 
     return {
-      winner: player2Data,
-      loser: player1Data,
+      winner: Data2,
+      loser: Data1,
     };
   };
   const result = (player1Data && player2Data) && calculateWinner(player1Data, player2Data);
@@ -85,7 +85,7 @@ const ResultPage = () => {
         </div>
       </div>
       <div className="reset">
-        <button className="resetBtn">
+        <button className="resetBtn" type="button">
           <Link to="/battle">Reset</Link>
         </button>
       </div>

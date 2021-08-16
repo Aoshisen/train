@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router';
 
 // 自己定义的组件
-import Header from './components/header.js';
+import Header from './components/header';
 
 // 自己定义的页面
-import IndexPage from './pages/indexPage/index.js';
-import BattlePage from './pages/BattlePage/index.js';
-import Page404 from './pages/page404/index.js';
-import ResultPage from './pages/resultPage/index.js';
+import IndexPage from './pages/indexPage/index';
+import BattlePage from './pages/battlePage/index';
+import Page404 from './pages/page404/index';
+import ResultPage from './pages/resultPage/index';
 
-import './App.css';
+// import '@/App.less';
 
 class App extends Component {
   render() {

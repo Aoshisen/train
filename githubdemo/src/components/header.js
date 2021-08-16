@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React  from 'react';
 import {
-  NavLink, Switch, useHistory, useLocation,
+  NavLink, Switch
 } from 'react-router-dom';
-import { nav } from '../router.js';
+import { nav } from '../router';
 
 const Header = () => (
   <Switch>

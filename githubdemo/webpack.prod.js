@@ -1,7 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const webpack = require('webpack')
+const webpack = require('webpack');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -78,7 +80,14 @@ module.exports = {
     },
     resolve:{
         alias:{
-            '@':path.resolve('./src')
+            '@':path.resolve('src')
         }
+    },
+    optimization:{
+        minimize:true,
+        minimizer:[
+            new TerserPlugin(),
+            new OptimizeCssAssetsPlugin(),
+        ]
     }
 };

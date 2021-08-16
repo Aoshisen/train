@@ -14,7 +14,7 @@ const urls = {
   ruby: 'stars:%3E1+language:ruby',
   java: 'stars:%3E1+language:java',
   css: 'stars:%3E1+language:css',
-  python: 'stars:%3E1+language:python',
+  python: 'stars:%3E1+language:python'
 };
 const PopularList = () => {
   const { search } = useLocation();
@@ -33,20 +33,18 @@ const PopularList = () => {
     setError(err);
   });
   // 页面跳转副作用
-  useEffect(() => {
-    console.log('页面跳转副作用');
+  useEffect(()=>{
     setData([]);
     setCurrentPage(1);
-    loadFunc(tab, 1).then((res) => { res && setData(res); });
-  }, [tab]);
+    loadFunc(tab, 1).then((res) => { res && setData(res)})//eslint-disable-line
+  },[tab]);
   const loadMore = () => {
     // 这里不能写封装好了的请求函数，原因不明确
     if (error) {
       alert(error);
       return;
     }
-    fetch(`https://api.github.com/search/repositories?q=${urls[tab]}&sort=starts&order=desc&type=Repositories&page=${currentPage}`).then((res) => res && res.json()).then((res) => {
-      res && setData([...data, ...res.items]);
+    fetch(`https://api.github.com/search/repositories?q=${urls[tab]}&sort=starts&order=desc&type=Repositories&page=${currentPage}`).then((res) => res && res.json()).then((res) => { setData([...data, ...res.items]);
       setCurrentPage(currentPage + 1);
     });
     // loadFunc(tab,currentPage).then(res=>{
@@ -67,16 +65,10 @@ const PopularList = () => {
     >
       <div className="content">
         {
-                data && data.map((item, index) => <ListItem key={index} {...item} id={index} />)
+                data && data.map((item, index) => <ListItem key={index} data={item} id={index} />)
             }
       </div>
     </InfiniteScroll>
   );
-
-  // <div className="content">
-  //     {
-  //             data && data.map((item, index) => <ListItem key={index} {...item} id={index} />)
-  //     }
-  // </div>
 };
 export default PopularList;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Switch, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import qs from 'qs';
 import { indexHeadNav } from '../../router';
 
@@ -21,7 +21,7 @@ const SecondHeader = () => {
             defaultValue={0}
             activeStyle={{ color: 'red' }}
             exact
-            isActive={() => tab == item.name.toLowerCase()}
+            isActive={() => tab === item.name.toLowerCase()}
           >{item.name}
           </NavLink>
         ))
