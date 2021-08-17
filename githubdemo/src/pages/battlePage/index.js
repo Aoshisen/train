@@ -66,13 +66,13 @@ export default function Battle() {
                             }}
                             value={player1}
                             onKeyDown={(({ keyCode }) => {
-                              if (!player1.trim()) {
-                                alert('此输入框为必填字段');// eslint-disable-line no-alert
-                                return;
-                              }
                               if (keyCode === 13) {
-                                sessionStorage.setItem('player1', player1);
-                                setUser1(true);
+                                if (!player2.trim()) {
+                                  alert('此输入框为必填字段'); // eslint-disable-line no-alert
+                                  return;
+                                }
+                                sessionStorage.setItem('player2', player2);
+                                setUser2(true);
                               }
                             })}
                           /> <button

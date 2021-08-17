@@ -1,6 +1,9 @@
 .instructions h1{
     text-align: center;
 }
+.instructions{
+    min-width: 1037px;
+}
 .content {
     padding: 0 200px;
 }

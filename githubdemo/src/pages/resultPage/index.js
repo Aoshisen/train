@@ -33,7 +33,7 @@ const ResultPage = () => {
   };
   const result = (player1Data && player2Data) && calculateWinner(player1Data, player2Data);
   return (
-    <>
+    <div className='result'>
       <div className="resultGroup">
         <div className="result-item">
           <h2>Winner</h2>
@@ -89,7 +89,7 @@ const ResultPage = () => {
           <Link to="/battle">Reset</Link>
         </button>
       </div>
-    </>
+    </div>
   );
 };
 export default ResultPage;
