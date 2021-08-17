@@ -36,12 +36,12 @@ const PopularList = () => {
   useEffect(()=>{
     setData([]);
     setCurrentPage(1);
-    loadFunc(tab, 1).then((res) => { res && setData(res)})//eslint-disable-line
+    loadFunc(tab, 1).then((res) => { res && setData(res)}) //eslint-disable-line
   },[tab]);
   const loadMore = () => {
     // 这里不能写封装好了的请求函数，原因不明确
     if (error) {
-      alert(error);
+      alert(error);// eslint-disable-line no-alert
       return;
     }
     fetch(`https://api.github.com/search/repositories?q=${urls[tab]}&sort=starts&order=desc&type=Repositories&page=${currentPage}`).then((res) => res && res.json()).then((res) => { setData([...data, ...res.items]);

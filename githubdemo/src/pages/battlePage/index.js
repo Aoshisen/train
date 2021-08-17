@@ -67,7 +67,7 @@ export default function Battle() {
                             value={player1}
                             onKeyDown={(({ keyCode }) => {
                               if (!player1.trim()) {
-                                alert('此输入框为必填字段');
+                                alert('此输入框为必填字段');// eslint-disable-line no-alert
                                 return;
                               }
                               if (keyCode === 13) {
@@ -117,7 +117,7 @@ export default function Battle() {
                             onKeyDown={({ keyCode }) => {
                               if (keyCode === 13) {
                                 if (!player2.trim()) {
-                                  alert('此输入框为必填字段');
+                                  alert('此输入框为必填字段'); // eslint-disable-line no-alert
                                   return;
                                 }
                                 sessionStorage.setItem('player2', player2);
