@@ -1,0 +1,108 @@
+@media screen and(max-width:1200px){
+    .self-group .self-item{
+      width: 33.3%;
+    }
+  }
+  @media screen and(min-width:1200px){
+    .self-group .self-item{
+      width: 25%;
+    }
+  }
+  @media screen and(max-width:760px){
+    .self-group .self-item{
+      width: 50%;
+    }
+  }
+  @media screen and(max-width:540px){
+    .self-group .self-item{
+      width: 100%;
+    }
+  }
+.header{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+
+  .self-group{
+    display: flex;
+    flex-wrap: wrap;
+    .self-item{
+    //   width: 25%;
+      position: relative;
+      padding: 20px;
+      border: 1px solid transparent;
+      text-align: center;
+      margin-bottom: 30px;
+      &:hover{
+      border: 1px solid #EEEEEE;
+      }
+      img {
+        width: 100%;
+      }
+      .self-item-title{
+        display: block;
+        height: 45px;
+        font-size: 17px;
+        line-height: 20px;
+        position: relative;
+        margin: 16px 0;
+      }
+      .after::before{
+        content: "";
+        width: 20px;
+        height: 2px;
+        background-color: #eabf00;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        margin-left: -10px;
+    }
+    .availableSizes{
+      color: #9C9B9B;
+      font-size: 10px;
+    }
+    .item-val{
+      height: 29px;
+      b {
+        font-size: 1.5rem;
+        margin-left: 5px;
+      }
+    }
+    .item-installment{
+      color: #9C9B9B;
+      font-size: larger;
+    }
+    .placeholder{
+      height: 26px;
+    }
+      .item-free{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        height: 24px;
+        background-color: #1b1a20;
+        color: #EEEEEE;
+        padding: 0 5px;
+      }
+      .item-btn{
+        width: 100%;
+        margin-top: 10px;
+        height: 49px;
+        background-color: #1b1a20;
+        color: #fff;
+        font-size: larger;
+        border: transparent;
+      }
+      .item-btn:hover{
+        background-color: #EABF00;
+      }
+    }
+  }
+
+  .loading {
+    width: 100%;
+    text-align: center;
+    border-radius: 4px;
+  }

@@ -17,6 +17,8 @@
     }
   }
 }
+
+
 .filters{
   .title{
     margin-top: 2px;
@@ -42,20 +44,30 @@
     margin: 0 6px 10px 0;
     
   }
+
+  &-item:hover{
+    border: 1px solid #1B1A20;
+  }
+  &-item-active{
+    font-size: 12px;
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 37px;
+    margin: 0 6px 10px 0;
+    border: 1px solid transparent;
+    cursor: pointer;
+    background-color: #1B1A20;
+    color: #fff;
+  }
+  
   .star {
       color: #ADBBD3;
     small{
         margin: 10px;
     }
     }
-  &-item:hover{
-    border: 1px solid #1B1A20;
-  }
-  &-item:active{
-    border: 1px solid transparent;
-    background-color: #1B1A20;
-    color: #fff;
-  }
   .active{
     border: 1px solid transparent;
     background-color: #1B1A20;

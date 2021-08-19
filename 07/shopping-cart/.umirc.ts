@@ -8,8 +8,4 @@ export default defineConfig({
     { path: '/', component: '@/pages/index' },
   ],
   fastRefresh: {},
-  dva:{
-    immer: true,
-    hmr: false,
-  }
 });
