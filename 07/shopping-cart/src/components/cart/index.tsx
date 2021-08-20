@@ -1,34 +1,31 @@
 import React, { useState } from "react";
 import { Menu, Dropdown, Button, Spin, Drawer, Badge, Avatar, Radio } from 'antd';
-import {connect} from "umi"
-
+import { connect } from "umi"
 
 import styles from "./index.less"
 
-
-
-let Cart = ({cart,dispatch}) => {
+let Cart = ({ cart, dispatch }) => {
     const [visible, setVisible] = useState(false);
     const traggleShowDrawer = () => {
         setVisible(!visible);
     };
-    console.log(cart,'cart-Cart=dadasd');
-    let {goods}=cart
-    let caculateSum=(someArray)=>{
-        return someArray.length==0?0:someArray.reduce((accumulator,currentValue)=>{
-            console.log(accumulator,'accumulator');
-            
-            return accumulator+(currentValue.good.price)*(currentValue.count)
-        })(0)
+    let { goods } = cart
+    console.log(goods, "goods");
+
+    const caculateSum = (someArray) => {
+        console.log(someArray, "someArray");
+        let sum = 0;
+        someArray.forEach((item, index) => {
+            sum += item.good.price * item.count
+        })
+        return sum
     }
-    console.log(caculateSum(goods),"count");
-    
+
+    let installments = goods[0] ? goods[0].good.installments : undefined
     return <>
         <Button type="primary" onClick={({ target }) => {
             traggleShowDrawer(),
-            target.remove()
-            // console.log(target);
-            
+                target.remove()
         }} className={styles['aside-button']}>
             {/* Open */}
             <Badge offset={['0', '30px']} count={goods.length} color={"#EABF00"} showZero={true}><Avatar shape="square" src={require('@/static/bag-icon.png')}></Avatar></Badge>
@@ -37,7 +34,7 @@ let Cart = ({cart,dispatch}) => {
             placement="right"
             closable={false}
             getContainer={'#root'}
-            contentWrapperStyle={{ width: "480px" }}
+            contentWrapperStyle={{ width: "400px" }}
             visible={visible}
             className={styles['aside']}
             mask={false}
@@ -51,20 +48,19 @@ let Cart = ({cart,dispatch}) => {
             {/* 顶部小车车 */}
             <div className={styles['header-cart']}><Badge offset={['0', '40px']} count={goods.length} color={"#EABF00"} showZero={true} size={'small'}><Avatar shape="square" size="large" src={require('@/static/bag-icon.png')}></Avatar></Badge><span style={{ marginLeft: "20px" }}>Cart</span></div>
             {
-                goods.map((item, index) => {
+                goods && goods.map((item, index) => {
                     console.log(item);
-                    
-                    let {count,good:{title,style,price,sku,id}}=item;
+                    let { count, good: { title, style, price, sku, id } } = item;
                     return <div className={`${styles['cart-item']}`} key={index}>
                         <img src={require(`@/static/products/${sku}_2.jpg`)} alt="" />
-                        <div className={styles['self-item-del']} onClick={()=>{
+                        <div className={styles['self-item-del']} onClick={() => {
                             dispatch({
-                                type:"cart/delete",
-                                payload:{
+                                type: "cart/delete",
+                                payload: {
                                     id,
                                 }
                             })
-                        }}></div> 
+                        }}></div>
                         <div className={styles['item-center']}>
                             <p className={styles['center-title']}>{title}</p>
                             <p className={styles['center-desc']}>S | {style}<br />
@@ -74,25 +70,25 @@ let Cart = ({cart,dispatch}) => {
                         <div className={styles['item-right']}>
                             <p>$ {price.toFixed(2)}</p>
                             <div className={styles['btn-group']}>
-                                <Button className={count<=1?styles['disabled']:styles['add']} onClick={()=>{
+                                <Button className={count <= 1 ? styles['disabled'] : styles['add']} onClick={() => {
                                     dispatch({
-                                        type:'cart/min',
-                                        payload:{
-                                            good:item.good
+                                        type: 'cart/min',
+                                        payload: {
+                                            good: item.good
                                         }
                                     })
                                 }}>-</Button>
-                                <Button className={styles['add']} onClick={()=>{
+                                <Button className={styles['add']} onClick={() => {
                                     dispatch({
-                                        type:'cart/add',
-                                        payload:{
-                                            good:item.good
+                                        type: 'cart/add',
+                                        payload: {
+                                            good: item.good
                                         }
                                     })
                                 }}>+</Button>
                             </div>
                         </div>
-                        
+
                     </div>
                 })
             }
@@ -100,10 +96,15 @@ let Cart = ({cart,dispatch}) => {
             <div className={styles['aside-footer']}>
                 <div className={styles['sub']}>SUBTOTAL</div>
                 <div className={styles['sub-price']}>
-                    {/* <div className={styles['sub-price-val']}>$ {caculateSum(goods)}</div> */}
-                    <small>OR UP TO 5 x $ 31.48</small>
+                    <div className={styles['sub-price-val']}>$ {caculateSum(goods).toFixed(2)}</div>
+                    {installments ? <small>OR UP TO {installments} x $ {(caculateSum(goods) / installments).toFixed(2)}</small> : ""}
                 </div>
-                <div className={styles['buy-btn']}>
+                <div className={styles['buy-btn']} onClick={() => {
+                    (caculateSum(goods)) ? alert(`Checkout - Subtotal: $ ${(caculateSum(goods) / installments).toFixed(2)}`) : ""
+                    dispatch({
+                        type: "cart/deleteAll"
+                    })
+                }}>
                     Checkout
                 </div>
             </div>
@@ -112,8 +113,7 @@ let Cart = ({cart,dispatch}) => {
 
 }
 
-const mapStateToProps=({cart})=>{
-    // console.log(cart,'cart-Cart');
-    return {cart}
+const mapStateToProps = ({ cart }) => {
+    return { cart }
 }
 export default connect(mapStateToProps)(Cart);
