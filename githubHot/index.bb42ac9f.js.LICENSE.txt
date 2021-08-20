@@ -1,0 +1,546 @@
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+
+/*! !!../../../node_modules/css-loader/dist/cjs.js!./index.css */
+
+/*! !!../node_modules/css-loader/dist/cjs.js!../node_modules/less-loader/dist/cjs.js!./App.less */
+
+/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */
+
+/*! !../../../node_modules/style-loader/dist/runtime/insertBySelector.js */
+
+/*! !../../../node_modules/style-loader/dist/runtime/insertStyleElement.js */
+
+/*! !../../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */
+
+/*! !../../../node_modules/style-loader/dist/runtime/styleDomAPI.js */
+
+/*! !../../../node_modules/style-loader/dist/runtime/styleTagTransform.js */
+
+/*! !../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */
+
+/*! !../node_modules/style-loader/dist/runtime/insertBySelector.js */
+
+/*! !../node_modules/style-loader/dist/runtime/insertStyleElement.js */
+
+/*! !../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */
+
+/*! !../node_modules/style-loader/dist/runtime/styleDomAPI.js */
+
+/*! !../node_modules/style-loader/dist/runtime/styleTagTransform.js */
+
+/*! ../../../node_modules/css-loader/dist/runtime/api.js */
+
+/*! ../../../node_modules/css-loader/dist/runtime/cssWithMappingToString.js */
+
+/*! ../../components/popularList/index */
+
+/*! ../../components/secondHeader */
+
+/*! ../../router */
+
+/*! ../listItem/index */
+
+/*! ../node_modules/css-loader/dist/runtime/api.js */
+
+/*! ../node_modules/css-loader/dist/runtime/cssWithMappingToString.js */
+
+/*! ../router */
+
+/*! ./ */
+
+/*! ./App */
+
+/*! ./App.less */
+
+/*! ./checkPropTypes */
+
+/*! ./cjs/react-dom.development.js */
+
+/*! ./cjs/react-is.development.js */
+
+/*! ./cjs/react.development.js */
+
+/*! ./cjs/scheduler-tracing.development.js */
+
+/*! ./cjs/scheduler.development.js */
+
+/*! ./components/header */
+
+/*! ./dist/InfiniteScroll */
+
+/*! ./factoryWithTypeCheckers */
+
+/*! ./formats */
+
+/*! ./implementation */
+
+/*! ./index.css */
+
+/*! ./lib/ReactPropTypesSecret */
+
+/*! ./pages/battlePage */
+
+/*! ./pages/indexPage/index */
+
+/*! ./pages/page404/index */
+
+/*! ./pages/resultPage/index */
+
+/*! ./parse */
+
+/*! ./setPrototypeOf.js */
+
+/*! ./shams */
+
+/*! ./stringify */
+
+/*! ./util.inspect */
+
+/*! ./utils */
+
+/*! @babel/runtime/helpers/esm/extends */
+
+/*! @babel/runtime/helpers/esm/inheritsLoose */
+
+/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */
+
+/*! @fortawesome/fontawesome-svg-core */
+
+/*! @fortawesome/free-solid-svg-icons */
+
+/*! @fortawesome/react-fontawesome */
+
+/*! call-bind/callBound */
+
+/*! function-bind */
+
+/*! get-intrinsic */
+
+/*! has */
+
+/*! has-symbols */
+
+/*! history */
+
+/*! hoist-non-react-statics */
+
+/*! import() */
+
+/*! isarray */
+
+/*! mini-create-react-context */
+
+/*! object-assign */
+
+/*! object-inspect */
+
+/*! path-to-regexp */
+
+/*! prop-types */
+
+/*! qs */
+
+/*! react */
+
+/*! react-dom */
+
+/*! react-infinite-scroller */
+
+/*! react-is */
+
+/*! react-router */
+
+/*! react-router-dom */
+
+/*! resolve-pathname */
+
+/*! scheduler */
+
+/*! scheduler/tracing */
+
+/*! side-channel */
+
+/*! tiny-invariant */
+
+/*! tiny-warning */
+
+/*! value-equal */
+
+/*!********************!*\
+  !*** ./src/App.js ***!
+  \********************/
+
+/*!**********************!*\
+  !*** ./src/App.less ***!
+  \**********************/
+
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+
+/*!***********************!*\
+  !*** ./src/router.js ***!
+  \***********************/
+
+/*!********************************!*\
+  !*** ./util.inspect (ignored) ***!
+  \********************************/
+
+/*!**********************************!*\
+  !*** ./src/components/header.js ***!
+  \**********************************/
+
+/*!************************************!*\
+  !*** ./src/pages/page404/index.js ***!
+  \************************************/
+
+/*!*************************************!*\
+  !*** ./node_modules/react/index.js ***!
+  \*************************************/
+
+/*!**************************************!*\
+  !*** ./node_modules/qs/lib/index.js ***!
+  \**************************************/
+
+/*!**************************************!*\
+  !*** ./node_modules/qs/lib/parse.js ***!
+  \**************************************/
+
+/*!**************************************!*\
+  !*** ./node_modules/qs/lib/utils.js ***!
+  \**************************************/
+
+/*!**************************************!*\
+  !*** ./src/pages/indexPage/index.js ***!
+  \**************************************/
+
+/*!***************************************!*\
+  !*** ./node_modules/has/src/index.js ***!
+  \***************************************/
+
+/*!***************************************!*\
+  !*** ./src/pages/resultPage/index.js ***!
+  \***************************************/
+
+/*!****************************************!*\
+  !*** ./node_modules/qs/lib/formats.js ***!
+  \****************************************/
+
+/*!****************************************!*\
+  !*** ./node_modules/react-is/index.js ***!
+  \****************************************/
+
+/*!****************************************!*\
+  !*** ./src/pages/resultPage/index.css ***!
+  \****************************************/
+
+/*!*****************************************!*\
+  !*** ./node_modules/call-bind/index.js ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./node_modules/react-dom/index.js ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./node_modules/scheduler/index.js ***!
+  \*****************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/prop-types/index.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/qs/lib/stringify.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./src/components/listItem/index.js ***!
+  \******************************************/
+
+/*!*******************************************!*\
+  !*** ./node_modules/has-symbols/index.js ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./node_modules/has-symbols/shams.js ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./node_modules/scheduler/tracing.js ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./src/components/listItem/index.css ***!
+  \*******************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/side-channel/index.js ***!
+  \********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/call-bind/callBound.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/function-bind/index.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/get-intrinsic/index.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/history/esm/history.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/object-assign/index.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./src/components/popularList/index.js ***!
+  \*********************************************/
+
+/*!**********************************************!*\
+  !*** ./node_modules/object-inspect/index.js ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./src/components/popularList/index.css ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./src/components/secondHeader/index.js ***!
+  \**********************************************/
+
+/*!***********************************************!*\
+  !*** ./src/components/secondHeader/index.css ***!
+  \***********************************************/
+
+/*!***************************************************!*\
+  !*** ./node_modules/prop-types/checkPropTypes.js ***!
+  \***************************************************/
+
+/*!*****************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
+  \*****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./node_modules/react/cjs/react.development.js ***!
+  \*****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./node_modules/value-equal/esm/value-equal.js ***!
+  \*****************************************************/
+
+/*!******************************************************!*\
+  !*** ./node_modules/function-bind/implementation.js ***!
+  \******************************************************/
+
+/*!*******************************************************!*\
+  !*** ./node_modules/react-infinite-scroller/index.js ***!
+  \*******************************************************/
+
+/*!*******************************************************!*\
+  !*** ./node_modules/react-router/esm/react-router.js ***!
+  \*******************************************************/
+
+/*!***********************************************************!*\
+  !*** ./node_modules/react-is/cjs/react-is.development.js ***!
+  \***********************************************************/
+
+/*!************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/extends.js ***!
+  \************************************************************/
+
+/*!************************************************************!*\
+  !*** ./node_modules/prop-types/factoryWithTypeCheckers.js ***!
+  \************************************************************/
+
+/*!************************************************************!*\
+  !*** ./node_modules/tiny-warning/dist/tiny-warning.esm.js ***!
+  \************************************************************/
+
+/*!*************************************************************!*\
+  !*** ./node_modules/prop-types/lib/ReactPropTypesSecret.js ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ./node_modules/react-dom/cjs/react-dom.development.js ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ./node_modules/scheduler/cjs/scheduler.development.js ***!
+  \*************************************************************/
+
+/*!***************************************************************!*\
+  !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
+  \***************************************************************/
+
+/*!***************************************************************!*\
+  !*** ./node_modules/resolve-pathname/esm/resolve-pathname.js ***!
+  \***************************************************************/
+
+/*!***************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/styleDomAPI.js ***!
+  \***************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./node_modules/tiny-invariant/dist/tiny-invariant.esm.js ***!
+  \****************************************************************/
+
+/*!*****************************************************************!*\
+  !*** ./node_modules/@fortawesome/react-fontawesome/index.es.js ***!
+  \*****************************************************************/
+
+/*!*****************************************************************!*\
+  !*** ./node_modules/react-router/node_modules/isarray/index.js ***!
+  \*****************************************************************/
+
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js ***!
+  \******************************************************************/
+
+/*!******************************************************************!*\
+  !*** ./node_modules/mini-create-react-context/dist/esm/index.js ***!
+  \******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js ***!
+  \*******************************************************************/
+
+/*!********************************************************************!*\
+  !*** ./node_modules/@fortawesome/fontawesome-svg-core/index.es.js ***!
+  \********************************************************************/
+
+/*!********************************************************************!*\
+  !*** ./node_modules/@fortawesome/free-solid-svg-icons/index.es.js ***!
+  \********************************************************************/
+
+/*!********************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/insertBySelector.js ***!
+  \********************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ./node_modules/react-infinite-scroller/dist/InfiniteScroll.js ***!
+  \*********************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ./node_modules/scheduler/cjs/scheduler-tracing.development.js ***!
+  \*********************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/styleTagTransform.js ***!
+  \*********************************************************************/
+
+/*!**********************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/insertStyleElement.js ***!
+  \**********************************************************************/
+
+/*!************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/cssWithMappingToString.js ***!
+  \************************************************************************/
+
+/*!************************************************************************!*\
+  !*** ./node_modules/react-router/node_modules/path-to-regexp/index.js ***!
+  \************************************************************************/
+
+/*!****************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
+  \****************************************************************************/
+
+/*!******************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/pages/resultPage/index.css ***!
+  \******************************************************************************/
+
+/*!*********************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js ***!
+  \*********************************************************************************/
+
+/*!*********************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/components/listItem/index.css ***!
+  \*********************************************************************************/
+
+/*!**********************************************************************************!*\
+  !*** ./node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js ***!
+  \**********************************************************************************/
+
+/*!**********************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js ***!
+  \**********************************************************************************/
+
+/*!************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/components/popularList/index.css ***!
+  \************************************************************************************/
+
+/*!*************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/components/secondHeader/index.css ***!
+  \*************************************************************************************/
+
+/*!***************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./src/App.less ***!
+  \***************************************************************************************************/
+
+/**
+ * Checks if an event is supported in the current execution environment.
+ *
+ * NOTE: This will not work correctly for non-generic events such as `change`,
+ * `reset`, `load`, `error`, and `select`.
+ *
+ * Borrows from Modernizr.
+ *
+ * @param {string} eventNameSuffix Event name, e.g. "click".
+ * @return {boolean} True if the event is supported.
+ * @internal
+ * @license Modernizr 3.0.0pre (Custom Build) | MIT
+ */
+
+/** @license React v0.20.2
+ * scheduler-tracing.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v0.20.2
+ * scheduler.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v16.13.1
+ * react-is.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v17.0.2
+ * react-dom.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v17.0.2
+ * react.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
