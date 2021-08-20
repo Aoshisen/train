@@ -1,4 +1,9 @@
-
+:global{
+  .ant-drawer-footer{
+    height: 200px;
+    padding: 0;
+  }
+}
 .aside-button{
     position: fixed;
     top: 0;
@@ -13,8 +18,10 @@
        border-color: transparent;
      }
   }
-
   .aside {
+    ::-webkit-scrollbar {
+      display: none;
+    }
     min-height: 100%;
    .drawer-button{
      position: absolute;
@@ -33,7 +40,7 @@
     border-color:transparent ;
     border-radius: 0;
     width: 50px;
-    left: -50px;
+    left: -49px;
     height: 50px;
     top: 0;
     font-size: larger;
@@ -44,11 +51,15 @@
     text-align: center;
     padding:29px 0;
    }
+   .shelf-empty{
+    color: #ececec;
+    text-align: center;
+    line-height: 40px;
+   }
    .cart-item{
      height: 135px;
      padding: 22px;
      background-color: #1b1a20;
-
      position: relative;
      &::before{
        width:100%;
