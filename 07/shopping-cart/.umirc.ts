@@ -4,7 +4,7 @@ export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
   },
-  base:"./dist",
+  publicPath:"./dist/",
   routes: [
     { path: '/', component: '@/pages/index' },
   ],
