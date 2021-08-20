@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
+import {Alert} from 'antd';
+import 'antd/dist/antd.css';
 
 import InfiniteScroll from 'react-infinite-scroller';
 
@@ -30,7 +32,9 @@ const PopularList = () => {
       return res.json();
     }
   }).then((res) => res.items).catch((err) => {
+    console.log(err,"捕获到了error");
     setError(err);
+    console.log(error,"设置后的error");
   });
   // 页面跳转副作用
   useEffect(()=>{
@@ -41,7 +45,7 @@ const PopularList = () => {
   const loadMore = () => {
     // 这里不能写封装好了的请求函数，原因不明确
     if (error) {
-      alert(error);// eslint-disable-line no-alert
+      // alert(error);// eslint-disable-line no-alert
       return;
     }
     fetch(`https://api.github.com/search/repositories?q=${urls[tab]}&sort=starts&order=desc&type=Repositories&page=${currentPage}`).then((res) => res && res.json()).then((res) => { setData([...data, ...res.items]);
@@ -53,22 +57,27 @@ const PopularList = () => {
     // })
   };
   return (
-    <InfiniteScroll
-      pageStart={0}
-      loadMore={loadMore}
-      hasMore={true || false}
-      loader={(
-        <div className="wrapper" key={currentPage}>
-          <div className="rubik-loader" />
-        </div>
-          )}
-    >
-      <div className="content">
-        {
-                data && data.map((item, index) => <ListItem key={index} data={item} id={index} />)
-            }
+    !error?    <InfiniteScroll
+    pageStart={0}
+    loadMore={loadMore}
+    hasMore={true || false}
+    loader={(
+      <div className="wrapper" key={currentPage}>
+        <div className="rubik-loader" />
       </div>
-    </InfiniteScroll>
+        )}
+  >
+    <div className="content">
+      {
+              data && data.map((item, index) => <ListItem key={index} data={item} id={index} />)
+          }
+    </div>
+  </InfiniteScroll>:<Alert 
+   message={error}
+   description={error}
+   type="error"
+   closable
+  />
   );
 };
 export default PopularList;

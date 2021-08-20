@@ -11,6 +11,9 @@ export default function Battle() {
   const [player2, setPlayer2] = useState(sessionStorage.getItem('player2') || '');
   const [user1Submit, setUser1] = useState(false);
   const [user2Submit, setUser2] = useState(false);
+  const [userError1,setUserError1]=useState(false)
+  const [userError2,setUserError2]=useState(false)
+
   useEffect(() => () => {
     console.log('Battle页面卸载了');
   }, []);
@@ -89,7 +92,12 @@ export default function Battle() {
                       )
                       : (
                         <div className="user">
-                          <img src={`https://github.com/${player1}.png?size=200`} className="userAatar" alt=""/>
+                          <img src={`https://github.com/${player1}.png?size=200`} className="userAatar" onLoad={()=>{
+                            setUserError1(false)
+                          }} alt="" onError={()=>{
+                            setUserError1(true);
+                          }}/>
+                          <p>{userError1?"请输入正确的用户名":player1}</p>
                           <div
                             className="cancel"
                             onClick={() => {
@@ -101,7 +109,6 @@ export default function Battle() {
                         </div>
                       )
 }
-
         </div>
         <div className="right">
           {
@@ -138,7 +145,15 @@ export default function Battle() {
                       )
                       : (
                         <div className="user">
-                          <img src={`https://github.com/${player2}.png?size=200`} className="userAvatar" alt="请求中" />
+                          <img src={`https://github.com/${player2}.png?size=200`} className="userAvatar" 
+                          onLoad={()=>{
+                            setUserError2(false)
+
+                          }}
+                          alt="" onError={()=>{
+                            setUserError2(true);
+                          }}/>
+                          <p>{userError2?"请输入正确的用户名":player2}</p>
                           <div
                             className="cancel"
                             onClick={() => {
@@ -153,7 +168,7 @@ export default function Battle() {
         </div>
       </div>
       {
-            user1Submit && user2Submit
+            user1Submit && user2Submit&&!userError1&&!userError2
               ? (
                 <div className="winner">
                   <button type="button">

@@ -46,7 +46,13 @@
 }
 .user img {
     height: 100%;
-    float: left;
+    float: left;width: 100px;
+}
+.user p{
+    line-height: 100px;
+    color: green;
+    font-size: 25px;
+    display: inline;
 }
 .user .cancel{
     text-align: center;
