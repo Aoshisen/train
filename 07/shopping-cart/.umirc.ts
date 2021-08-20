@@ -11,5 +11,5 @@ export default defineConfig({
   history:{
     type:"hash"
   },
-  publicPath: process.env.NODE_ENV === 'production' ? './' : '/'
+  publicPath: '/'
 });
