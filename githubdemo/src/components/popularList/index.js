@@ -29,12 +29,12 @@ const PopularList = () => {
       console.log('捕获到了错误');
       throw new Error('请求太快了，请稍后重试');
     } else {
+      setError('');
       return res.json();
     }
   }).then((res) => res.items).catch((err) => {
     console.log(err,"捕获到了error");
-    setError(err);
-    console.log(error,"设置后的error");
+    setError(err.message)
   });
   // 页面跳转副作用
   useEffect(()=>{
@@ -74,7 +74,7 @@ const PopularList = () => {
     </div>
   </InfiniteScroll>:<Alert 
    message={error}
-   description={error}
+  //  description={error}
    type="error"
    closable
   />

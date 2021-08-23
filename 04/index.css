@@ -1,3 +1,13 @@
+html, body{
+    height: 100%;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+.index{
+    flex: 1;
+}
 body{
     padding: 0;
     margin: 0;
@@ -6,7 +16,16 @@ body{
     .movie-item .item-intro {
         padding: 0 100px;
     }
+    .desc{
+        font-size: 20px;
+    }
 }
+@media screen and (max-width:1200px){
+    .desc{
+        font-size: 15px;
+    }
+}
+
 
 .banner {
     width: 100%;
@@ -18,9 +37,16 @@ body{
 .banner .swiper-slide img {
     width:100%
 }
-
+.desc{
+    text-align: center; 
+    margin-top: 20px; 
+    /* font-size: 20px;  */
+    font-weight: 600;
+}
 .movie-item{
-    width: 100%;text-align: center;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .movie-item .item-intro{

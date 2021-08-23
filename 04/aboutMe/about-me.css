@@ -1,6 +1,14 @@
+html, body{
+    height: 100%;
+}
+.about-me{
+    flex: 1;
+}
 body{
     padding: 0;
-    margin: 0;
+    margin: 0; 
+     display: flex;
+    flex-direction: column;
 }
 .content{
     margin-bottom: 100px;
@@ -17,9 +25,14 @@ body{
 }
 
 .intro{
-    margin-bottom: 50px;
+    margin: 0 auto;
+}
+
+.main-right{
+    display: inline-block;
 }
 .main-right .info {
+
     position: relative;
     line-height: 35px;
 }

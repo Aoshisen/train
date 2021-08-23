@@ -70,45 +70,45 @@
                 </p>
             </div>
         </div>
-        <footer>
-            <div class="container footer">
-                <div class="row information">
-                    <div class="col-md-3 col-xs-6 info-item">
-                        <img src="../assets/location.png" alt="" srcset="">
-                        <div class="description clearfix">
-                            成都市武侯区
-                        </div>
+    </div>
+    <footer>
+        <div class="container footer">
+            <div class="row information">
+                <div class="col-md-3 col-xs-4 info-item">
+                    <img src="../assets/location.png" alt="" srcset="">
+                    <div class="description clearfix">
+                        成都市武侯区
                     </div>
-                    <div class="col-md-3 col-xs-6 info-item">
-                        <img src="../assets/emial.png" alt="" srcset="">
-                        <div class="description clearfix">
-                            email@admain.com.cn
-                        </div>
+                </div>
+                <div class="col-md-3 col-xs-4 info-item">
+                    <img src="../assets/emial.png" alt="" srcset="">
+                    <div class="description clearfix">
+                        email@admain.com.cn
                     </div>
-                    <div class="col-md-3 col-xs-6 info-item">
-                        <img src="../assets/telephone.png" alt="" srcset="">
-                        <div class="description clearfix">
-                            123-482-2684
-                        </div>
+                </div>
+                <div class="col-md-3 col-xs-4 info-item">
+                    <img src="../assets/telephone.png" alt="" srcset="">
+                    <div class="description clearfix">  
+                        123-482-2684
                     </div>
-                    <div class="col-md-3 col-xs-6 info-item special">
-                        <img src="../assets/mmqrcode1627285639457.png" alt="" srcset="">
-                        <div class="description clearfix">
-                            扫一扫添加微信
-                        </div>
+                </div>
+                <div class="col-md-3 col-xs-8 col-xs-offset-2 col-md-offset-0 info-item special">
+                    <img src="../assets/mmqrcode1627285639457.png" alt="" srcset="">
+                    <div class="description clearfix">
+                        扫一扫添加微信
                     </div>
                 </div>
             </div>
-            <div class="copyright">
-                版权所有@Aoshisen
-            </div>
-        </footer>
-    </div>
+        </div>
+        <div class="copyright">
+            版权所有@Aoshisen
+        </div>
+</footer>
 </body>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
     let { search } = location
-    // console.log(search.slice(1));
+    console.log(search.slice(1));
     var a = new URLSearchParams(search);
     let page = a.get("page")
     let index = a.get('id')
@@ -128,7 +128,6 @@
         createAt.innerHTML = Data.passtime
         p[0].innerHTML = Data.title.repeat(6)
         p[1].innerHTML = Data.title.repeat(6)
-
         // console.log(Data);
     })
 </script>

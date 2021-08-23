@@ -1,6 +1,7 @@
 footer {
-    /* height: 400px; */
+    /* height: 420px; */
     background-color: #D7D7D7;
+    flex: 0;
 }
 .clearfix:after {
     visibility: hidden;
@@ -20,6 +21,7 @@ footer .info-item{
 }
 footer .info-item img{
     height: 100px;
+    /* width: 100%; */
 }
 footer .description{
     margin-top: 10px;
