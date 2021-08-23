@@ -45,7 +45,7 @@ let Cart = ({ cart, dispatch }) => {
                     {installments ? <small>OR UP TO {installments} x $ {(caculateSum(goods) / installments).toFixed(2)}</small> : ""}
                 </div>
                 <div className={styles['buy-btn']} onClick={() => {
-                    (caculateSum(goods)) ? alert(`Checkout - Subtotal: $ ${(caculateSum(goods) / installments).toFixed(2)}`) : ""
+                    (caculateSum(goods)) ? alert(`Checkout - Subtotal: $ ${caculateSum(goods).toFixed(2)}`) : ""
                     dispatch({
                         type: "cart/deleteAll"
                     })
