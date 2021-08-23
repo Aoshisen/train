@@ -1,0 +1,39 @@
+/*! !!../../../node_modules/css-loader/dist/cjs.js!./index.css */
+
+/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */
+
+/*! !../../../node_modules/style-loader/dist/runtime/insertBySelector.js */
+
+/*! !../../../node_modules/style-loader/dist/runtime/insertStyleElement.js */
+
+/*! !../../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */
+
+/*! !../../../node_modules/style-loader/dist/runtime/styleDomAPI.js */
+
+/*! !../../../node_modules/style-loader/dist/runtime/styleTagTransform.js */
+
+/*! ../../../node_modules/css-loader/dist/runtime/api.js */
+
+/*! ../../../node_modules/css-loader/dist/runtime/cssWithMappingToString.js */
+
+/*! ./index.css */
+
+/*! @fortawesome/free-solid-svg-icons */
+
+/*! @fortawesome/react-fontawesome */
+
+/*! react */
+
+/*! react-router-dom */
+
+/*!***************************************!*\
+  !*** ./src/pages/battlePage/index.js ***!
+  \***************************************/
+
+/*!****************************************!*\
+  !*** ./src/pages/battlePage/index.css ***!
+  \****************************************/
+
+/*!******************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/pages/battlePage/index.css ***!
+  \******************************************************************************/
