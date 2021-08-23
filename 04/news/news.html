@@ -201,12 +201,11 @@
             </div>
         </div>
         <div class="pagination">
-            <button class="before">
-                < </button>
+            <button class="before">< </button>
                     <span>1</span>
                     <span>2</span>
                     <span>3</span>
-                    <button class="after"> > </button>
+            <button class="after"> > </button>
         </div>
     </div>
     </div>
@@ -295,12 +294,15 @@
     let preButton = document.querySelector('.pagination .before');
     let afterButton = document.querySelector('.pagination .after');
     let spans = document.querySelectorAll("span")
+    currentPage==1?preButton.remove():""
     preButton.addEventListener('click', () => {
         console.log(currentPage)
         currentPage = Math.max(1, --currentPage)
         window.location.href = `./news.html?page=${currentPage}`
         // render(currentPage)
     })
+    console.log(currentPage,"currentPage");
+    currentPage==3?afterButton.remove():""
     afterButton.addEventListener('click', () => {
         currentPage = Math.min(3, ++currentPage)
         window.location.href = `./news.html?page=${currentPage}`

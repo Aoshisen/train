@@ -65,18 +65,22 @@ body {
 .pagination button{
     position: relative;
     top: 2px;
-    border: 1px solid #000;
+    border: 1px solid #D7D7D7;
     cursor: pointer;
     padding: 0 10px;
+    font-weight: 600;
 }
 .pagination span{
     position: relative;
+    display: inline-block;
+    height: 22px;
     top: 2px;
-    border: 1px solid #000;
+    border: 1px solid #D7D7D7;
     cursor: pointer;
     padding: 0 10px;
 }
 .pagination .active{
-    background-color: #000;
+    background-color: #202124;
+    border: 1px solid #202124;
     color: #fff;
 }
