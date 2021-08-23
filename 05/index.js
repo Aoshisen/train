@@ -66,8 +66,6 @@ const IndexPage = () => {
     　　}
     　　return windowHeight;
     }
-  
-
   const loadFunc = (type, page) => fetch(`https://api.github.com/search/repositories?q=${urls[type]}&sort=starts&order=desc&type=Repositories&page=${page}`).then((res) => res.json()).then((res) => res.items)
   useEffect(() => {
     setData([]);
@@ -85,7 +83,7 @@ const IndexPage = () => {
     <div className='header'>
       {
         indexHeadNav.map((item, index) => {
-          return <a key={index} href={`/index.html${item.url}`} className={type===item.name.toLocaleLowerCase()?'red':"header-item"}>{item.name}</a>
+          return <a key={index} href={`./index.html${item.url}`} className={type===item.name.toLocaleLowerCase()?'red':"header-item"}>{item.name}</a>
         })
       }
     </div>
