@@ -11,10 +11,10 @@ body{ display: flex;
     background-color: #C9CACE;
 }
 .news-detail{
-    min-width: 900px;
+    /* min-width: 900px; */
 }
 .title{
-    padding: 30px 150px 0 130px;
+    /* padding: 30px 150px 0 130px; */
     background-color: #C0C1C5;
 }
 .title span {
@@ -41,7 +41,7 @@ body{ display: flex;
     width: 600px;
 }
 .content .intro {
-    padding: 50px 150px;
+    /* padding: 50px 150px; */
     height: 200px;
     overflow: hidden;
     /* background-color: #0ff; */

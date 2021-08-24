@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -201,11 +202,11 @@
             </div>
         </div>
         <div class="pagination">
-            <button class="before">< </button>
-                    <span>1</span>
+            <button class="before">
+                < </button> <span>1</span>
                     <span>2</span>
                     <span>3</span>
-            <button class="after"> > </button>
+                    <button class="after"> > </button>
         </div>
     </div>
     </div>
@@ -226,7 +227,7 @@
                 </div>
                 <div class="col-md-3 col-xs-4 info-item">
                     <img src="../assets/telephone.png" alt="" srcset="">
-                    <div class="description clearfix">  
+                    <div class="description clearfix">
                         123-482-2684
                     </div>
                 </div>
@@ -241,7 +242,7 @@
         <div class="copyright">
             版权所有@Aoshisen
         </div>
-</footer>
+    </footer>
 </body>
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js" rel="external nofollow"></script>
 <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js" rel="external nofollow"></script>
@@ -253,13 +254,13 @@
     let contentItems = document.querySelectorAll(".content-item");
     // console.log(contentItems);
     //页面渲染逻辑  
-    let render = function () {
-        // let page=2
-       let search = location.search?location.search:"?page=1"
-    //    console.log(location)
-    //    console.log(search.slice(1));
-       var a = new URLSearchParams(search);
-       let page = a.get('page')
+    let render = function (page = 1) {
+        // // let page=2
+        // let search = location.search ? location.search : "?page=1"
+        // //    console.log(location)
+        // //    console.log(search.slice(1));
+        // var a = new URLSearchParams(search);
+        // let page = a.get('page')
         axios({
             method: "post",
             url: `https://api.apiopen.top/getWangYiNews?page=${page}&count=8`,
@@ -284,38 +285,42 @@
         spans.forEach((item, index) => {
             item.className = index + 1 == page ? "active" : ""
         })
-    }
-    render()
-    //pagination 里面的跳转逻辑
+        let preButton = document.querySelectorAll('.pagination button')[0];
+        let afterButton = document.querySelectorAll('.pagination button')[1];
+        preButton.className = page == 1 ? "hidden" : "before"
+        afterButton.className = page == 3 ? "hidden" : "after"
 
-    let search = location.search?location.search:"?page=1"
-    var a = new URLSearchParams(search);
-    let currentPage = a.get('page')
-    let preButton = document.querySelector('.pagination .before');
-    let afterButton = document.querySelector('.pagination .after');
+    }
+
+    //pagination 里面的跳转逻辑
+    let currentPage = localStorage.getItem('currentPage') ? localStorage.getItem('currentPage') : 1;
+    render(currentPage)
+    let preButton = document.querySelectorAll('.pagination button')[0];
+    let afterButton = document.querySelectorAll('.pagination button')[1];
     let spans = document.querySelectorAll("span")
-    currentPage==1?preButton.remove():""
     preButton.addEventListener('click', () => {
-        console.log(currentPage)
-        currentPage = Math.max(1, --currentPage)
-        window.location.href = `./news.html?page=${currentPage}`
-        // render(currentPage)
+        console.log(currentPage);
+        currentPage = Math.max(1, --currentPage);
+        localStorage.setItem("currentPage", currentPage);
+        render(currentPage)
     })
-    console.log(currentPage,"currentPage");
-    currentPage==3?afterButton.remove():""
+
     afterButton.addEventListener('click', () => {
         currentPage = Math.min(3, ++currentPage)
-        window.location.href = `./news.html?page=${currentPage}`
-        // render(currentPage)
+        localStorage.setItem("currentPage", currentPage);
+        render(currentPage)
     })
     spans.forEach((item, index) => {
         item.addEventListener('click', function () {
+            console.log("点击了span");
             currentPage = item.innerHTML
-            window.location.href = `./news.html?page=${currentPage}`
-            // render(currentPage)
+            console.log(localStorage.getItem('currentPage') == currentPage);
+            let isNotNew = localStorage.getItem('currentPage') == currentPage
+            localStorage.setItem("currentPage", currentPage);
+            console.log(isNotNew, "isNotNew");
+            !isNotNew ? render(currentPage) : ""
         })
     })
-
     //每一个新闻点击跳转详情页的逻辑
     contentItems.forEach((item, index) => {
         item.addEventListener("click", () => {

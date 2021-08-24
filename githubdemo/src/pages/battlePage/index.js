@@ -24,7 +24,7 @@ export default function Battle() {
 
   useEffect(
     () => () => {
-      console.log("Battle页面卸载了"
+      console.log("Battle页面卸载了");
     },
     []
   );

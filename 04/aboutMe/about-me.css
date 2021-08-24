@@ -10,8 +10,15 @@ body{
      display: flex;
     flex-direction: column;
 }
+@media screen and (max-width:1200px){
+    .main-right{
+        display: inline-block;
+        padding: 20px 30px;
+    }
+}
+
 .content{
-    margin-bottom: 100px;
+    /* margin-bottom: 100px; */
     min-height: 450px;
     display: flex;
     align-items: center;
@@ -28,8 +35,20 @@ body{
     margin: 0 auto;
 }
 
+.main {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#map{
+    height: 300px;
+    /* margin-bottom: 50px; */
+}
 .main-right{
     display: inline-block;
+}
+.main-right .intro{
+    margin-bottom: 20px;
 }
 .main-right .info {
 
