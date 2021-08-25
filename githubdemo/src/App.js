@@ -11,7 +11,7 @@ import Page404 from "@/pages/page404/index";
 import ResultPage from "@/pages/resultPage/index";
 import "./App.less";
 
-const BattlePage = lazy(() => import("./pages/battlePage"));
+const BattlePage = lazy(() => import("./pages/battlePage")
 
 class App extends Component {
   render() {
