@@ -8,7 +8,7 @@ import {
   faCode,
 } from "@fortawesome/free-solid-svg-icons";
 
-import "./index.css";
+import "./index.less";
 import qs from "qs";
 
 const ResultPage = () => {

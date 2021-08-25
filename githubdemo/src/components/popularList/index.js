@@ -8,7 +8,7 @@ import InfiniteScroll from "react-infinite-scroller";
 import qs from "qs";
 import ListItem from "../listItem/index";
 
-import "./index.css";
+import "./index.less";
 
 const urls = {
   all: "stars:%3E1",

@@ -8,7 +8,7 @@ import {
 
 import { Link } from "react-router-dom";
 
-import "./index.css";
+import "./index.less";
 
 export default function Battle() {
   const [player1, setPlayer1] = useState("");
