@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useEffect, useState } from "react";
+import { Link, Redirect, useLocation } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faLocationArrow, faLayerGroup, faUserPlus, faCode,
-} from '@fortawesome/free-solid-svg-icons';
+  faLocationArrow,
+  faLayerGroup,
+  faUserPlus,
+  faCode,
+} from "@fortawesome/free-solid-svg-icons";
 
-import './index.css';
-import qs from 'qs';
+import "./index.css";
+import qs from "qs";
 
 const ResultPage = () => {
   const { search } = useLocation();
@@ -14,12 +17,16 @@ const ResultPage = () => {
   const [player1Data, setPlayer1Data] = useState();
   const [player2Data, setPlayer2Data] = useState();
   useEffect(() => {
-    fetch(`https://api.github.com/users/${player1}`).then((res) => res.json()).then((res) => setPlayer1Data(res));
-    fetch(`https://api.github.com/users/${player2}`).then((res) => res.json()).then((res) => setPlayer2Data(res));
+    fetch(`https://api.github.com/users/${player1}`)
+      .then((res) => res.json())
+      .then((res) => setPlayer1Data(res));
+    fetch(`https://api.github.com/users/${player2}`)
+      .then((res) => res.json())
+      .then((res) => setPlayer2Data(res));
   }, []);
   const calculateWinner = (Data1, Data2) => {
-    console.log('进入计算赢家函数');
-    if (Data1.public_repos >Data2.public_repos) {
+    console.log("进入计算赢家函数");
+    if (Data1.public_repos > Data2.public_repos) {
       return {
         winner: Data1,
         loser: Data2,
@@ -31,17 +38,24 @@ const ResultPage = () => {
       loser: Data1,
     };
   };
-  const result = (player1Data && player2Data) && calculateWinner(player1Data, player2Data);
-  return (
-    <div className='result'>
+  const result =
+    player1Data && player2Data && calculateWinner(player1Data, player2Data);
+  return player2 && player1 ? (
+    <div className="result">
       <div className="resultGroup">
         <div className="result-item">
-          <h2>Winner</h2>
+          <h2>{player1 === player2 ? "Draw" : "Winner"}</h2>
           <div className="img">
-            <img alt="" src={result && `https://github.com/${result.winner.login}.png?size=200`} />
+            <img
+              alt=""
+              src={
+                result &&
+                `https://github.com/${result.winner.login}.png?size=200`
+              }
+            />
           </div>
           <h3>scores:{result && result.winner.public_repos}</h3>
-          <h2 style={{ color: '#1890FF' }}>{result && result.winner.login}</h2>
+          <h2 style={{ color: "#1890FF" }}>{result && result.winner.login}</h2>
           <div>
             <FontAwesomeIcon icon={faLocationArrow} />
             {result && result.winner.location}
@@ -60,12 +74,18 @@ const ResultPage = () => {
           </div>
         </div>
         <div className="result-item">
-          <h2>Loser</h2>
+          <h2>{player1 === player2 ? "Draw" : "Loser"}</h2>
           <div className="img">
-            <img alt="" src={result && `https://github.com/${result.loser.login}.png?size=200`} />
+            <img
+              alt=""
+              src={
+                result &&
+                `https://github.com/${result.loser.login}.png?size=200`
+              }
+            />
           </div>
           <h3>scores:{result && result.loser.public_repos}</h3>
-          <h2 style={{ color: '#1890FF' }}>{result && result.loser.login}</h2>
+          <h2 style={{ color: "#1890FF" }}>{result && result.loser.login}</h2>
           <div>
             <FontAwesomeIcon icon={faLocationArrow} />
             {result && result.loser.location}
@@ -90,6 +110,8 @@ const ResultPage = () => {
         </button>
       </div>
     </div>
+  ) : (
+    <Redirect to="/battle" />
   );
 };
 export default ResultPage;

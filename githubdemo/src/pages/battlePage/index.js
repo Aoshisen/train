@@ -11,16 +11,15 @@ import { Link } from "react-router-dom";
 import "./index.css";
 
 export default function Battle() {
-  const [player1, setPlayer1] = useState(
-    sessionStorage.getItem("player1") || ""
-  );
-  const [player2, setPlayer2] = useState(
-    sessionStorage.getItem("player2") || ""
-  );
+  const [player1, setPlayer1] = useState("");
+  const [player2, setPlayer2] = useState("");
   const [user1Submit, setUser1] = useState(false);
   const [user2Submit, setUser2] = useState(false);
   const [userError1, setUserError1] = useState(false);
   const [userError2, setUserError2] = useState(false);
+  const [user1Data, setUser1Data] = useState();
+  const [user2Data, setUser2Data] = useState();
+
   return (
     <div className="instructions">
       <h1>instruction</h1>
@@ -80,19 +79,29 @@ export default function Battle() {
                 value={player1}
                 onKeyDown={({ keyCode }) => {
                   if (keyCode === 13) {
-                    if (!player2.trim()) {
+                    if (!player1.trim()) {
                       alert("此输入框为必填字段"); // eslint-disable-line no-alert
                       return;
                     }
-                    sessionStorage.setItem("player2", player2);
-                    setUser2(true);
+                    fetch(`https://api.github.com/users/${player1}`)
+                      .then((res) => res.json())
+                      .then((res) => {
+                        setUserError1(res.message);
+                        setUser1Data(res);
+                      });
+                    setUser1(true);
                   }
                 }}
               />{" "}
               <button
                 disabled={!player1}
                 onClick={() => {
-                  sessionStorage.setItem("player1", player1);
+                  fetch(`https://api.github.com/users/${player1}`)
+                    .then((res) => res.json())
+                    .then((res) => {
+                      setUserError1(res.message);
+                      setUser1Data(res);
+                    });
                   setUser1(true);
                 }}
                 type="button"
@@ -103,17 +112,11 @@ export default function Battle() {
           ) : (
             <div className="user">
               <img
-                src={`https://github.com/${player1}.png?size=200`}
+                src={user1Data && user1Data.avatar_url}
                 className="userAatar"
-                onLoad={() => {
-                  setUserError1(false);
-                }}
                 alt=""
-                onError={() => {
-                  setUserError1(true);
-                }}
               />
-              <p>{userError1 ? "请输入正确的用户名" : player1}</p>
+              <p>{userError1 ? `${userError1}` : player1}</p>
               <div
                 className="cancel"
                 onClick={() => {
@@ -141,7 +144,12 @@ export default function Battle() {
                       alert("此输入框为必填字段"); // eslint-disable-line no-alert
                       return;
                     }
-                    sessionStorage.setItem("player2", player2);
+                    fetch(`https://api.github.com/users/${player2}`)
+                      .then((res) => res.json())
+                      .then((res) => {
+                        setUserError2(res.message);
+                        setUser2Data(res);
+                      });
                     setUser2(true);
                   }
                 }}
@@ -149,7 +157,12 @@ export default function Battle() {
               <button
                 disabled={!player2}
                 onClick={() => {
-                  sessionStorage.setItem("player2", player2);
+                  fetch(`https://api.github.com/users/${player2}`)
+                    .then((res) => res.json())
+                    .then((res) => {
+                      setUserError2(res.message);
+                      setUser2Data(res);
+                    });
                   setUser2(true);
                 }}
                 type="button"
@@ -160,17 +173,11 @@ export default function Battle() {
           ) : (
             <div className="user">
               <img
-                src={`https://github.com/${player2}.png?size=200`}
-                className="userAvatar"
-                onLoad={() => {
-                  setUserError2(false);
-                }}
+                src={user2Data && user2Data.avatar_url}
+                className="userAatar"
                 alt=""
-                onError={() => {
-                  setUserError2(true);
-                }}
               />
-              <p>{userError2 ? "请输入正确的用户名" : player2}</p>
+              <p>{userError2 ? `${userError2}` : player2}</p>
               <div
                 className="cancel"
                 onClick={() => {
