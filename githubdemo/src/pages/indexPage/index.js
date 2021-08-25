@@ -1,6 +1,6 @@
 import React from "react";
-import SecondHeader from "../../components/secondHeader";
-import PopularList from "../../components/popularList/index";
+import SecondHeader from "@/components/secondHeader";
+import PopularList from "@/components/popularList/index";
 
 const IndexPage = () => (
   <div>

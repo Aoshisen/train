@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
-// const webpack = require("webpack");
+const webpack = require("webpack");
 
 module.exports = {
   entry: {
@@ -35,6 +35,7 @@ module.exports = {
       },
     }),
   ],
+  resolve: { alias: { "@": path.resolve("src") } },
   output: {
     filename: "[name].[contenthash:8].js",
     path: path.resolve(__dirname, "dist"),
@@ -73,11 +74,6 @@ module.exports = {
         use: ["eslint-loader"],
       },
     ],
-  },
-  resolve: {
-    alias: {
-      "@": path.resolve("./src"),
-    },
   },
   optimization: {
     minimize: true,

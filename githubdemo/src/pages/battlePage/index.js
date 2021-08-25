@@ -21,14 +21,6 @@ export default function Battle() {
   const [user2Submit, setUser2] = useState(false);
   const [userError1, setUserError1] = useState(false);
   const [userError2, setUserError2] = useState(false);
-
-  useEffect(
-    () => () => {
-      console.log("Battle页面卸载了");
-    },
-    []
-  );
-
   return (
     <div className="instructions">
       <h1>instruction</h1>
