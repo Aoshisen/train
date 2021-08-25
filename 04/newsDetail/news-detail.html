@@ -12,12 +12,13 @@
     <link rel="stylesheet" href="../header.css">
     <link rel="stylesheet" href="./news-detail.css">
 </head>
+
 <body>
     <div class="news-detail">
         <header>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-8  col-xs-11">
+                    <div class="col-md-8  col-xs-10">
                         <img src="../assets/logo.jpg" alt="" class="logo">
                         <div class="name">星美国际影城</div>
                     </div>
@@ -28,24 +29,24 @@
                             <li role="presentation"><a href="../aboutMe/about-me.html">关于我们</a></li>
                         </ul>
                     </div>
-                    <div class="col-xs-1  hidden-lg hidden-md">
+                    <div class="col-xs-2  hidden-lg hidden-md">
                         <div class="dropdown">
                             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                 <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
                             </button>
                             <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-                                <li><a href="#">首页</a></li>
-                                <li><a href="#">新闻</a></li>
-                                <li><a href="#">关于我们</a></li>
+                                <li><a href="../index.html">首页</a></li>
+                                <li><a href="../news/news.html">新闻</a></li>
+                                <li><a href="../aboutMe/about-me.html">关于我们</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
-        <div class="content">
-            <div class="title">
+        <div class="title">
+            <div class="container">
                 <span></span>
                 <div class="title-text">
                     <!-- 《蚁人》再发新剧照 漫威第二阶段收官之作 7月17日北美上映 -->
@@ -54,6 +55,8 @@
                     <!-- 2015-05-26 09:27:23 -->
                 </div>
             </div>
+        </div>
+        <div class="content container">
             <div class="picture">
                 <!-- <img src="../assets/黑寡妇.jpg" alt=""> -->
                 <img src="" alt="">
@@ -83,12 +86,13 @@
                 <div class="col-md-3 col-xs-4 info-item">
                     <img src="../assets/emial.png" alt="" srcset="">
                     <div class="description clearfix">
-                        email@admain.com.cn
+                        email@
+                        admain.com.cn
                     </div>
                 </div>
                 <div class="col-md-3 col-xs-4 info-item">
                     <img src="../assets/telephone.png" alt="" srcset="">
-                    <div class="description clearfix">  
+                    <div class="description clearfix">
                         123-482-2684
                     </div>
                 </div>
@@ -103,11 +107,16 @@
         <div class="copyright">
             版权所有@Aoshisen
         </div>
-</footer>
+    </footer>
 </body>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js" rel="external nofollow"></script>
+<script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js" rel="external nofollow"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
-    let { search } = location
+    let {
+        search
+    } = location
     console.log(search.slice(1));
     var a = new URLSearchParams(search);
     let page = a.get("page")
@@ -115,7 +124,7 @@
     let title = document.querySelector(".title .title-text");
     let createAt = document.querySelector(".title .create-at")
     let img = document.querySelector('.picture img')
-    let p=document.querySelectorAll('.intro p')
+    let p = document.querySelectorAll('.intro p')
     // console.log(title,createAt,img);
     axios({
         method: "post",

@@ -1,51 +1,54 @@
-html, body{
-    height: 100%;
-}
-.news-detail{
-    flex: 1;
-}
-body{ display: flex;
-    flex-direction: column;
-    padding: 0;
-    margin: 0;
-    background-color: #C9CACE;
-}
-.news-detail{
-    /* min-width: 900px; */
-}
-.title{
-    /* padding: 30px 150px 0 130px; */
-    background-color: #C0C1C5;
-}
-.title span {
-    height: 20px;
-    width: 5px;
-    background-color: red;
-    position: relative;
-    display: inline-block;
-    top: 2px;
-}
-.title .title-text {
-    display: inline-block;
-}
-.title .create-at {
-    font-size: 8px;
-    line-height: 40px;
-    color: #97989C;
-}
-.picture {
-    margin-top: 10px;
-    text-align: center;
-}
-.picture img {
-    width: 600px;
-}
-.content .intro {
-    /* padding: 50px 150px; */
-    height: 200px;
-    overflow: hidden;
-    /* background-color: #0ff; */
-    font-size: 8px;
-    color: rgb(39, 36, 30);
-    /* color: #97989C; */
-}
+    html, body{
+        height: 100%;
+    }
+    .news-detail{
+        flex: 1;
+    }
+    body{ display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        background-color: #C9CACE;
+    }
+    /* .news-detail{
+        min-width: 900px;
+    } */
+    .news-detail{
+        width: 100%;
+    }
+    .title{
+        /* padding: 30px 150px 0 130px; */
+        background-color: #C0C1C5;
+    }
+    .title span {
+        height: 20px;
+        width: 5px;
+        background-color: red;
+        position: relative;
+        display: inline-block;
+        top: 2px;
+    }
+    .title .title-text {
+        display: inline-block;
+    }
+    .title .create-at {
+        font-size: 8px;
+        line-height: 40px;
+        color: #97989C;
+    }
+    .picture {
+        margin-top: 10px;
+        text-align: center;
+    }
+    .picture img {
+        width: 100%;
+    }
+    .content .intro {
+        /* padding: 50px 150px; */
+        height: 200px;
+        overflow: hidden;
+        /* background-color: #0ff; */
+        font-size: 8px;
+        color: rgb(39, 36, 30);
+        /* color: #97989C; */
+    }

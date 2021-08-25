@@ -1,3 +1,13 @@
+@media screen and (min-width:1200px){
+    footer .info-item img{
+        height: 100px;
+    }
+}
+@media screen and (max-width:1200px){
+    footer .info-item img{
+        height: 50px;
+    }
+}
 footer {
     /* height: 420px; */
     background-color: #D7D7D7;
@@ -19,10 +29,7 @@ footer .info-item{
     text-align: center;
     /* border: 1px solid #000; */
 }
-footer .info-item img{
-    height: 100px;
-    /* width: 100%; */
-}
+
 footer .description{
     margin-top: 10px;
 }

@@ -48,7 +48,8 @@ body {
     height: 150px;
 } */
 .content .content-item:hover{
-    transform:scale(1.05,1.05)
+    transform:scale(1.05,1.05);
+    cursor: pointer;
 }
 .content-item .item-left{
     height: 100%;
@@ -86,13 +87,15 @@ body {
 .pagination button{
     position: relative;
     top: 2px;
-    border: 1px solid #D7D7D7;
     cursor: pointer;
     padding: 0 10px;
     font-weight: 600;
 }
-.hidden{
-    visibility: hidden;
+.not-see{
+    color: transparent;
+    /* border: transparent 1px solid; */
+    border: none;
+    background-color: transparent;
 }
 .pagination span{
     position: relative;

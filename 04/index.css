@@ -23,6 +23,10 @@ body{
         height: 350px;
         padding:0 10px;
     }
+    .serve .icon{
+        color: #989898;
+        font-size: 60px;
+    }
 }
 @media screen and (max-width:1200px){
     .desc{
@@ -31,6 +35,10 @@ body{
     .news .news-item{
         height: 300px;
         padding:0 10px;
+    }
+    .serve .icon{
+        color: #989898;
+        font-size: 30px;
     }
 }
 

@@ -222,7 +222,8 @@
                 <div class="col-md-3 col-xs-4 info-item">
                     <img src="../assets/emial.png" alt="" srcset="">
                     <div class="description clearfix">
-                        email@admain.com.cn
+                        email@
+                        admain.com.cn
                     </div>
                 </div>
                 <div class="col-md-3 col-xs-4 info-item">
@@ -287,8 +288,8 @@
         })
         let preButton = document.querySelectorAll('.pagination button')[0];
         let afterButton = document.querySelectorAll('.pagination button')[1];
-        preButton.className = page == 1 ? "hidden" : "before"
-        afterButton.className = page == 3 ? "hidden" : "after"
+        preButton.className = page == 1 ? "not-see" : "before"
+        afterButton.className = page == 3 ? "not-see" : "after"
 
     }
 
