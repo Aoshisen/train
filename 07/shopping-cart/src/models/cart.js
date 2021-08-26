@@ -6,35 +6,35 @@ export default {
   reducers: {
     'add'(state,{payload:{good}}) {
         let {goods}=state
-        let _goods=goods;
+        let result=goods;
         let IsHave=false;
-        _goods.forEach(_good => {
+        result.forEach(_good => {
             if(_good.good.id==good.id){
             _good.count++
             IsHave=true;
             }
         });
-        _goods=IsHave?_goods:[..._goods,{good,count:1}]
-        localStorage.setItem("goods",JSON.stringify(_goods))
-        return{goods:_goods}
+        result=IsHave?result:[...result,{good,count:1}]
+        localStorage.setItem("goods",JSON.stringify(result))
+        return{goods:result}
     },
     'min'(state,{payload:{good}}){
         let {goods}=state;
-        let _goods=goods;
-        _goods.forEach(_good => {
+        let result=goods;
+        result.forEach(_good => {
             if(_good.good==good){
                 _good.count=Math.max(1,--_good.count)
             }
         });
-        localStorage.setItem("goods",JSON.stringify(_goods))
-        return {goods:[..._goods]}
+        localStorage.setItem("goods",JSON.stringify(result))
+        return {goods:[...result]}
     },
     'delete'(state,{payload:{id}}){
         let {goods}=state;
-        let _goods=goods;
-        _goods=_goods.filter(_good=>_good.good.id!==id)
-        localStorage.setItem("goods",JSON.stringify(_goods))
-        return {goods:_goods}
+        let result=goods;
+        result=result.filter(_good=>_good.good.id!==id)
+        localStorage.setItem("goods",JSON.stringify(result))
+        return {goods:result}
     },
     'deleteAll'(){
         localStorage.clear()
