@@ -28,7 +28,7 @@ class App extends Component {
           <Switch>
             <Route path="/" component={IndexPage} exact />
             <Route path="/battle" component={BattlePage} exact />
-            <Route path="/result" component={ResultPage} exact />
+            <Route path="/result" component={ResultPage} exact
             <Route path="" component={Page404} />
           </Switch>
         </Suspense>

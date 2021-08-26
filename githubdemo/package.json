@@ -71,11 +71,12 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "npm run lint-staged"
     }
   },
   "lint-staged": {
     "src/**/*.{js,jsx,less}": [
+      "npx eslint -c .eslintrc.js --fix",
       "eslint --fix",
       "prettier --write",
       "git add"
