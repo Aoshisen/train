@@ -10,7 +10,7 @@
     "start": "webpack serve",
     "deploy": "gh-pages -d dist/ -e githubHot",
     "lint": "eslint src/",
-    "pre-commit":"echo \"Error: no test specified\" && exit 1"
+    "pre-commit": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
@@ -81,5 +81,7 @@
     ],
     "**/*.{js,jsx}": "eslint --ext .js"
   },
-  "pre-commit": ["lint" ]
+  "pre-commit": [
+    "lint"
+  ]
 }
