@@ -26,6 +26,7 @@
     "eslint-import-resolver-webpack": "^0.13.1",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.2",
+    "lint-staged": "^11.1.2",
     "style-loader": "^3.2.1",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",
@@ -65,7 +66,13 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint"
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "src/**/*.{js,json,vue}": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }
