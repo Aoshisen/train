@@ -10,9 +10,9 @@ let Cart = ({ cart, dispatch }) => {
         setVisible(!visible);
     };
     let { goods } = cart
-    console.log(goods, "goods");
+    console.log(goods, "<===goods");
     const caculateSum = (someArray) => {
-        console.log(someArray, "someArray");
+        console.log(someArray, "<=======someArray");
         let sum = 0;
         someArray.forEach((item, index) => {
             sum += item.good.price * item.count
