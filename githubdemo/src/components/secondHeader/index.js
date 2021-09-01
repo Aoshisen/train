@@ -8,7 +8,7 @@ import "./index.less";
 const SecondHeader = () => {
   const { search } = useLocation();
   console.log(qs.parse(search.substr(1)));
-  const { tab = "all" } = qs.parse(search.substr(1
+  const { tab = "all" } = qs.parse(search.substr(1));
   return (
     <header>
       <div className="header">
