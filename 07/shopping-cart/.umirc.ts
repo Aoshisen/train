@@ -12,4 +12,5 @@ export default defineConfig({
     type:"hash"
   },
   publicPath: '/train/07/shopping-cart/dist/'
+  // publicPath:"./"
 });
