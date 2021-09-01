@@ -13,14 +13,14 @@ body {
     margin: 0;
 }
 
-@media screen and (min-width:1200px){
+@media screen and (min-width:960px){
     .content .content-item {
         margin: 25px 0;    
         /* width: 550px; */
         height: 150px;
     }
 }
-@media screen and (max-width:1200px){
+@media screen and (max-width:960px){
     .content .content-item {
         margin:  0;    
         /* width: 550px; */
@@ -35,6 +35,8 @@ body {
     flex: 1;
 }
 .banner {
+    position: relative;
+    top: -2px;
     width: 100%;
 }
 .banner img{

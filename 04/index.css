@@ -51,7 +51,8 @@ body{
     width: 100%;
 }
 .banner .swiper-slide img {
-    width:100%
+    width:100%;
+    height: auto;
 }
 .desc{
     text-align: center; 
@@ -62,7 +63,7 @@ body{
 .movie-item{
     width: 100%;
     text-align: center;
-    margin: 0 auto;
+    /* margin: 0 auto; */
 }
 
 .movie-item .item-intro{
@@ -82,15 +83,15 @@ body{
 .movie-item .item-intro p {
     margin: 10px 0;
 }
-.item-intro .movie-name{
+.movie-name{
     text-align: center;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 400;
 }
 .movie-item .item-img img{
     width: 100%;
 }
-
-
-
 .news-title {
     text-align: center;
     margin-top: 100px;
@@ -123,4 +124,11 @@ body{
     margin-bottom: 20px;
     font-size: 20px;
     font-weight: 500;
+}
+.swiper-container{
+    position:relative;
+}
+.swiper-pagination{
+    position:absolute;
+    bottom: 20px;
 }

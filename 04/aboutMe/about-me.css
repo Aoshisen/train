@@ -13,7 +13,7 @@ body{
 @media screen and (max-width:1200px){
     .main-right{
         display: inline-block;
-        padding: 20px 30px;
+        padding: 20px ;
     }
 }
 
@@ -51,7 +51,6 @@ body{
     margin-bottom: 20px;
 }
 .main-right .info {
-
     position: relative;
     line-height: 35px;
 }

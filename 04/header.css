@@ -1,6 +1,6 @@
 header {
     height: 40px;
-    background-color: ivory;
+    background-color: #F1F1F1;
 }
 header .btn-default{
     border-color: transparent;
@@ -27,7 +27,6 @@ header .btn-default{
     font-weight: 500;
 }
 .banner {
-    margin-top:10px;
     width: 100%;
     overflow: hidden;
 }
