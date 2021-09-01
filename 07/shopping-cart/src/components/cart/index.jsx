@@ -9,7 +9,8 @@ let Cart = ({ cart, dispatch }) => {
     const traggleShowDrawer = () => {
         setVisible(!visible);
     };
-    let { goods=[] } = cart
+    console.log(cart);
+    let { goods } = cart
     console.log(goods, "<===goods");
     const caculateSum = (someArray) => {
         console.log(someArray, "<=======someArray");
@@ -19,7 +20,6 @@ let Cart = ({ cart, dispatch }) => {
         })
         return sum
     }
-
     let installments = goods[0] ? goods[0].good.installments : undefined
     return <>
         <Button type="primary" onClick={({ target }) => {

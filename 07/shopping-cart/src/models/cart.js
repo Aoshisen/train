@@ -1,7 +1,9 @@
 export default {
   namespace: 'cart',
   state: {
-    goods: JSON.parse(localStorage.getItem('goods')),
+    goods: JSON.parse(localStorage.getItem('goods'))
+      ? JSON.parse(localStorage.getItem('goods'))
+      : [],
   },
   reducers: {
     add(state, { payload: { good } }) {
