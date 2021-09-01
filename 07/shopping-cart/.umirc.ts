@@ -11,6 +11,6 @@ export default defineConfig({
   history:{
     type:"hash"
   },
-  publicPath: '/train/07/shopping-cart/dist/'
-  // publicPath:"./"
+  // publicPath: '/train/07/shopping-cart/dist/'
+  publicPath:"./"
 });

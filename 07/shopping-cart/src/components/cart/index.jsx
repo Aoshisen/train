@@ -9,7 +9,7 @@ let Cart = ({ cart, dispatch }) => {
     const traggleShowDrawer = () => {
         setVisible(!visible);
     };
-    let { goods } = cart
+    let { goods=[] } = cart
     console.log(goods, "<===goods");
     const caculateSum = (someArray) => {
         console.log(someArray, "<=======someArray");
