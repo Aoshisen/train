@@ -1,3 +1,5 @@
+import { storageDataToLocal, getDataFromLocal } from '../services/index';
+
 export default {
   namespace: 'cart',
   state: {
@@ -6,44 +8,52 @@ export default {
       : [],
   },
   reducers: {
+    //增加商品
     add(state, { payload: { good } }) {
       let { goods } = state;
-      let _goods = goods;
+      let tempGoods = goods;
       let IsHave = false;
-      _goods &&
-        _goods.forEach((_good) => {
-          if (_good.good.id == good.id) {
-            _good.count++;
+      tempGoods &&
+        tempGoods.forEach((tempGood) => {
+          if (tempGood.good.id == good.id) {
+            tempGood.count++;
             IsHave = true;
           }
         });
-      _goods = IsHave ? _goods : [..._goods, { good, count: 1 }];
-      localStorage.setItem('goods', JSON.stringify(_goods));
+      tempGoods = IsHave ? tempGoods : [...tempGoods, { good, count: 1 }];
+      // localStorage.setItem('goods', JSON.stringify(tempGoods));
+      storageDataToLocal(tempGoods);
       console.log(JSON.parse(localStorage.getItem('goods')));
-      return { goods: _goods };
+      return { goods: tempGoods };
     },
+    //减少商品
     min(state, { payload: { good } }) {
       let { goods } = state;
-      let _goods = goods;
-      _goods.forEach((_good) => {
-        if (_good.good == good) {
-          _good.count = Math.max(1, --_good.count);
+      let tempGoods = goods;
+      tempGoods.forEach((tempGood) => {
+        if (tempGood.good == good) {
+          tempGood.count = Math.max(1, --tempGood.count);
         }
       });
-      localStorage.setItem('goods', JSON.stringify(_goods));
-      return { goods: [..._goods] };
+      // localStorage.setItem('goods', JSON.stringify(tempGoods));
+      storageDataToLocal(tempGoods);
+      return { goods: [...tempGoods] };
     },
+    //删除商品
     delete(state, { payload: { id } }) {
       let { goods } = state;
-      let _goods = goods;
-      _goods = _goods.filter((_good) => _good.good.id !== id);
-      localStorage.setItem('goods', JSON.stringify(_goods));
-      return { goods: _goods };
+      let tempGoods = goods;
+      tempGoods = tempGoods.filter((tempGood) => tempGood.good.id !== id);
+      // localStorage.setItem('goods', JSON.stringify(tempGoods));
+      storageDataToLocal(tempGoods);
+      return { goods: tempGoods };
     },
+    //清空商品
     deleteAll() {
       localStorage.clear();
       return { goods: [] };
     },
+    //测试打印
     log(state) {
       console.log('我是打印函数');
       return { state };
