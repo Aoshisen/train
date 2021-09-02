@@ -1,15 +1,11 @@
 import styles from './index.less';
 import { useState } from 'react';
-import { Button, Radio } from 'antd';
+import {  Radio } from 'antd';
 import {connect} from "umi";
 import { StarOutlined } from '@ant-design/icons'
 const Sizes=({products,dispatch,orderBy,setFilterdSizes}) =>{
       const sizes=['XS','S','M','ML','L','XL','XXL']
       let [sizeList,setSizeList]=useState(Array(7).fill(false))
-      // console.log(orderBy,"size");
-      // let sizeList=Array(7).fill(false)
-      // console.log(products);
-      // console.log("重新渲染");
       return (
         <div className={styles.filters} onClick={()=>{
           let filterdSizes=sizes.filter((item,index)=>{

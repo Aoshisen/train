@@ -3,9 +3,7 @@ import { storageDataToLocal, getDataFromLocal } from '../services/index';
 export default {
   namespace: 'cart',
   state: {
-    goods: JSON.parse(localStorage.getItem('goods'))
-      ? JSON.parse(localStorage.getItem('goods'))
-      : [],
+    goods: getDataFromLocal() || [],
   },
   reducers: {
     //增加商品

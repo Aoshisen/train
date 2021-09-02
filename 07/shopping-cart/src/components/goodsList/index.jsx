@@ -73,7 +73,7 @@ let GoodsList = (props) => {
                             </div>
                             {installments ? <div className={styles['item-installment']}><span>or {installments} x</span><b>{`${currencyFormat}${(price / installments).toFixed(2)}`}</b></div> : <div className={styles['placeholder']}></div>}
                             <Button className={styles['item-btn']} onClick={()=>{
-                                console.log("点击了购买按钮");
+                                // console.log("点击了购买按钮");
                                 dispatch({
                                     type:'cart/add',
                                     payload:{good}

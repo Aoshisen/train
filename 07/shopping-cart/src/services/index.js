@@ -9,7 +9,7 @@ const getData = () => {
 const storageDataToLocal = async (data) => {
   localStorage.setItem('goods', JSON.stringify(data));
 };
-const getDataFromLocal = async () => {
+const getDataFromLocal = () => {
   return JSON.parse(localStorage.getItem('goods'));
 };
 

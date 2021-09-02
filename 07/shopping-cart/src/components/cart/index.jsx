@@ -9,11 +9,11 @@ let Cart = ({ cart, dispatch }) => {
     const traggleShowDrawer = () => {
         setVisible(!visible);
     };
-    console.log(cart);
+    // console.log(cart);
     let { goods } = cart
-    console.log(goods, "<===goods");
+    // console.log(goods, "<===goods");
     const caculateSum = (someArray) => {
-        console.log(someArray, "<=======someArray");
+        // console.log(someArray, "<=======someArray");
         let sum = 0;
         someArray.forEach((item, index) => {
             sum += item.good.price * item.count
@@ -31,13 +31,12 @@ let Cart = ({ cart, dispatch }) => {
         </Button>
         <Drawer
             placement="right"
-            closable={false}
-            getContainer={'#root'}
-            contentWrapperStyle={{ width: "440px" }}
+            contentWrapperStyle={{ width: "370px" }}
             visible={visible}
+            closable={false}
             className={styles['aside']}
-            mask={false}
             bodyStyle={{ backgroundColor: "#1B1A20", padding: "0" }}
+            onClose={()=>setVisible(false)}
             footer={<div className={styles['aside-footer']}>
                 <div className={styles['sub']}>SUBTOTAL</div>
                 <div className={styles['sub-price']}>
@@ -65,7 +64,7 @@ let Cart = ({ cart, dispatch }) => {
             <div className={styles['header-cart']}><Badge offset={['0', '40px']} count={goods.length} color={"#EABF00"} showZero={true} size={'small'}><Avatar shape="square" size="large" src={require('@/static/bag-icon.png')}></Avatar></Badge><span style={{ marginLeft: "20px" }}>Cart</span></div>
             {
                 goods.length>0 ? goods.map((item, index) => {
-                    console.log(item);
+                    // console.log(item);
                     let { count, good: { title, style, price, sku, id } } = item;
                     return <div className={`${styles['cart-item']}`} key={index}>
                         <img src={require(`@/static/products/${sku}_2.jpg`)} alt="" />
