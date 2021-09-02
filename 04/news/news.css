@@ -13,18 +13,22 @@ body {
     margin: 0;
 }
 
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
 @media screen and (min-width:960px){
     .content .content-item {
-        margin: 25px 0;    
-        /* width: 550px; */
-        height: 150px;
+        margin: 15px 0;    
     }
 }
 @media screen and (max-width:960px){
     .content .content-item {
-        margin:  0;    
-        /* width: 550px; */
-        height: 120px;
+        margin:  10px 0;    
     }
     .banner{
         margin-bottom: 20px;
@@ -50,14 +54,15 @@ body {
     height: 150px;
 } */
 .content .content-item:hover{
-    transform:scale(1.05,1.05);
+    transform:scale(1.01,1.01);
     cursor: pointer;
+    text-decoration: line-through;
 }
 .content-item .item-left{
     height: 100%;
     width: 45%;
     float: left;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .item-left img{
     width: 100%;
@@ -71,6 +76,10 @@ body {
 .item-right .intro{
     font-family: Microsoft YaHei;
     font-size: 15px;
+}
+.item-right .intro:hover{
+    color: #00f;
+    text-decoration: underline;
 }
 .item-right .create-at{
     line-height: 50px;
